@@ -5,22 +5,43 @@
     <meta charset="UTF-8">
     <title>Micropedia</title>
     <link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
 
     
   </head>
   <body>
-	<section class="responseObjectContainer">
-			<h2>ObjectList</h2>
-			<section class="appPostFunctionality">
-					<form action="/" method="POST" class="listHeader">
-// for type, name, this depends on your data structure, type could be a number instead, name something else, etc
+	<section class="microagressions-container">
+		<h2> Micropedia</h2>
+			<section class="microagressions">
+			<h1> </h1>
+					<form action="/" method="POST" class="microagressions-header">
+<!-- // for type, name, this depends on your data structure, type could be a number instead, name something else, etc -->
 						<input type="text" name="title" value="title">
 						<textarea rows="6" cols="45" name="content">content</textarea>
-						<button type="submit">Add item to db collection</button>
+						<button type="submit">Add new microagression</button>
 						</form>
-				</section>
+
+						<ul class="microagressions-list">
+							<% microagressionsList.forEach(details => {%>
+								<li class="microagression--item">
+
+								<div class="microagression--title">
+									<%= details.title %>
+								   </div>
+								<div class="microagression--content">
+									<%= details.content %>
+								   </div>
+								<a href="/edit/<%=details._id %>" class="edit">EDIT </a>
+								<a href="/remove/<%=details._id %>" class="remove">REMOVE</a>
+								   </li>
+								<% }) %>
+						   </ul>
+				
+						
+			</section>
 		</section>
-    <script src="/main.js">
     </script>
   </body>
 </html>

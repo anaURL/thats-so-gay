@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.microagressions-container {
+    margin: 1.5rem;
+    display:flex;
+    flex-direction: column;
+}
+
+ section  {
+    display:flex;
+    padding: 1rem;
+} 
+
+h2 {
+    font-size: 1.5rem;
+    align-self: flex-start;
+}
+
+
+.microagressions {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+form {
+    display:flex;
+    flex-direction: column;
+    width:500px;
+    height: 100px;
+
+}
+
+.microagressions-list {
+    margin-left:0;
+    margin-top:3rem;
+    list-style: none;
+
+}
+
+.microagression--title  {
+    font-weight:600 ;
+}
+
+.buttons--edit {
+    display:flex;
+    flex-direction: row;
+    color: black;
+    font-size: 14px;
+    border: 1px solid black;
+}
+a.edit, .remove {
+    width: 100px;
+    height: 50px;
+}
+
