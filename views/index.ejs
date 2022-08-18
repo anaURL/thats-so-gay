@@ -12,27 +12,25 @@
     
   </head>
   <body>
-	<section class="microagressions--main">
-		<section class="microagressions--header">
-			<section class="header-left"> 
+	<section class="main">
+		<section class="header">
 			<h1> That's so gay!</h1>
 			<h3> Why you shouldn't be using this and other microagressions toward the queer community</h3>
-			<br>
-			<br>
+		</section>
+
+			<section class="about"> 
 			<h2> What are microagressions?</h2>
-			
 			<p> (def.) Microaggressions are everyday snubs and insults that marginalized groups face.
 				 They're often very subtle comments or actions that come from implicit bias and/or stereotypes. 
 				 They might seem like a compliment (“You're beautiful for a transgender girl”), a harmless comment (“Where are you really from?”), 
 				or a subconscious action (crossing the street to avoid a racialized person).</p>
 			</section>
-		 <section class="header-right">  
-			<section class="microagressions-latest--entries"> 
-				<h2> Latest entries</h2>
+
+			<h2> Latest entries</h2>
+			<section class="latest--entries"> 
 				<ul class="microagressions--list">
 					<% microagressionsList.forEach(details => {%>
 						<li class="microagression--item">
-		
 						<div class="microagression--title">
 							<%= details.title %>
 						   </div>
@@ -45,19 +43,16 @@
 						<% }) %>
 				   </ul>
 				</section>
-			
-			</section>
 		</section>
-
-					
+			
 		<section class="form--wrapper"> 
 			<h2> Add a microagression</h2>
 			<p> Microaggressions take many forms. We want to make sure every experience is heard. 
 				If you have one to share, feel free to submit a new microaggression entry.</p>
 			<form action="/" method="POST" class="microagressions-form">
 		<!-- // for type, name, this depends on your data structure, type could be a number instead, name something else, etc -->
-						<input type="text" name="title" value="add a title">
-						<textarea cols="30" name="content">why is this harmful?</textarea>
+						<input type="text" name="title" value="Add a title">
+						<textarea cols="30" name="content">Why is this harmful?</textarea>
 						<button type="submit">Add new microagression</button>
 				</form>
 		</section>	
