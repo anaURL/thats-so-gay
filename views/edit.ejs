@@ -11,12 +11,18 @@
 
   </head>
   <body>
-	<section class="microagressions-container">
-    <h2>Edit List Item</h2>
-	   <section class="microagressions">
-	      <ul class="microagressions-list">
+	<section class="main">
+      <section class="header">
+        <h1> That's so gay!</h1>
+        <h3> Why you shouldn't be using this and other microagressions toward the queer community</h3>
+      </section>
+	   <section class="latest--entries">
+	      <ul class="microagressions--list">
 		                <%  microagressionsList.forEach(details => {%>
                             <% if (details._id == idMicroagression) { %>
+
+                              <section class="form--wrapper"> 
+                                  <h2>Edit List Item</h2>
                                 <li class='microagression--item'>
                                 <form action="/edit/<%= details._id%>" method="POST">
                                     <input type="text" name="title" value="<%=details.title %>">
@@ -25,6 +31,7 @@
                                     <a href="/" class="cancel">Cancel</a>
                                     </form>
                                 </li>
+                              </section>
                                 <% } else { %>
                                     <li class="microagression--item">
                                     <div class="microagression--title">
