@@ -4,30 +4,48 @@
   <head>
     <meta charset="UTF-8">
     <title>Edit List</title>
-    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="/output.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
 
   </head>
   <body>
-	<section class="main">
-      <section class="header">
-        <h1> That's so gay!</h1>
-        <h3> Why you shouldn't be using this and other microagressions toward the queer community</h3>
-      </section>
-	   <section class="latest--entries">
-	      <ul class="microagressions--list">
+    <%- include('header.ejs') %>
+
+    <div class="bg-gray-100 h-1000 ">   
+      <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">     
+        <div class="md:flex md:flex-wrap md:gap-6">
+          <div class="md:col-span-3">
+            <div class="px-4 sm:px-0">
+              <p class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl px-8" >Microaggressions take many forms. We want to make sure every experience is heard. If you have one to share, feel free to add a new microaggression entry.
+            </p>
+            </div>
+          </div>
+
+          <div class="mt-10 sm:mt-0">
+                    <div class="md:flex md:flex-row md:gap-6">
+                      <div class="md:col-span-1">
+                        <div class="px-4 sm:px-0">
+
+	                <ul class="microagressions--list">
 		                <%  microagressionsList.forEach(details => {%>
                             <% if (details._id == idMicroagression) { %>
 
                               <section class="form--wrapper"> 
-                                  <h2>Edit List Item</h2>
+                                  <h3 class="text-lg font-bold leading-6 text-gray-900">Edit List Item</h3>
+
+                                  <div class="mt-5 md:col-span-2 md:mt-0">
+                                    <div class="overflow-hidden shadow sm:rounded-md">
+                                      <div class="bg-white px-4 py-5 sm:p-6">
+                                        <div class="grid grid-cols-6 gap-6">
+                                          <div class="col-span-6 sm:col-span-3"> 
+
                                 <li class='microagression--item'>
                                 <form action="/edit/<%= details._id%>" method="POST">
                                     <input type="text" name="title" value="<%=details.title %>">
                                     <textarea rows="6" cols="45" name="content"><%=details.content%></textarea>
-                                    <button type="submit" class="confirm">Confirm</button>
+                                    <button type="submit" class="buton rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-sm m-2 mt-0 mb-0">Confirm</button>
                                     <a href="/" class="cancel">Cancel</a>
                                     </form>
                                 </li>
@@ -49,7 +67,10 @@
                             <% }) %>
 
 						   </ul>
-				
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 						
 				</section>
 		</section>
