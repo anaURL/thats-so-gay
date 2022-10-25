@@ -2,7 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    /* font-family: 'Nunito', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+
+}
 
 li {
     list-style: none;
 }
+
+.flip {
+    text-align: center;
+    perspective: 600px;
+    
+  }
+  .flip-content {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+  }
+
+  .flip:hover .flip-content {
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+  }
+  .flip-front, .flip-back {
+    line-height: 150px;
+    backface-visibility: hidden;
+
+  }
+  .flip-back {
+    transform: rotateY(180deg);
+ 
+  }
+
+  .yellow {
+    background-color: #F9B316;
+  }

@@ -33,6 +33,7 @@ app.get('/examples', async(request, response) => {
 }
 });  
 
+
 app.get('/add', async(request, response) => {
     try {
         Microagression.find({}, (err, microagressions) => {
@@ -48,11 +49,27 @@ app.get('/about', (request, response) => {
 			response.render("about.ejs") 
 
 }); 
+app.get('/resources', (request, response) => {
+    response.render("resources.ejs") 
+
+}); 
+
+// preview of each microagression - returns 500 
+app
+    .route("/examples/:id")
+    .get((request,response) => {
+        const id = request.params.id 
+        console.log(mongoose.isValidObjectId(request.params.id))
+        Microagression.findById({}, (err, microagressions) => {
+            if (err) return response.status(500).send(err)
+            response.render('examples.ejs', { 
+                microagressionsList:microagressions, 
+                idMicroagression:id })
+        })
+        });
 
 
 //POST - ADD
-
-
     app.post('/add', async(request,response) => {
         const newMicroagression = new Microagression ( 
             { 

@@ -8,42 +8,84 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
   <link href="/output.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
+
 <title>Examples</title>
 </head>
 
 <body>
-  <%- include('header.ejs') %>
-
-    <div class="bg-white py-12">
-        <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
-          <div class="lg:text-center px-12">
-            <p class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl px-8"> What are microagressions? </p>
-            <h2 class="text-lg font-semibold text-indigo-600 m-8">  The act of constantly and openly perpetuating stereotypes and putting someone down can reinforce barriers in one's life (including in the workplace, when accessing leadership roles, and others). These are comments and actions directed towards people based on their gender identity and/or sexual orientation. These comments usually come from the societal belief that straight, for example, is a sign of being “normal”.</h2>   
-          </div>
-
-
-          <div class=" mt-10">
-            <dl class="space-y-10 md:grid md:gap-x-8 md:gap-y-10 md:space-y-0">
-              <div class="relative max-w-md">
-                <dt>
-                
-                        <% microagressionsList.forEach(details => {%>
-                          <p class="ml-16 text-lg font-medium leading-6 text-gray-900 m-4"> <%= details.title %></p>
-                          <dd class=" mt-2 ml-16 text-base text-gray-500"> <%= details.content %> </dd>   
-              
-
-                <div class="flex flex-row rounded-md shadow p-4">
-                    <a href="/edit/<%=details._id %>" class="flex w-1/12 h-4 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-sm m-2 mt-0 mb-0">Edit</a>
-                    <a href="/remove/<%=details._id %>" class="flex w-1/12 h-4 items-center justify-center rounded-md border border-transparent bg-indigo-100 px-8 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200 md:py-4 md:px-10 md:text-lg m-2 mt-0 mb-0">Remove</a> 
-                 </div>
-                </dt>
-                 
-                <% }) %>
+  <div class="bg-blue-500"> 
+    <%- include('header.ejs') %>
+  </div>
+    
+        <div class="bg-blue-500 py-12">
+            <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
+                 <div class="lg:text-center px-12  text-gray-900">
+                     <h1 class="mt-2 text-5xl font-bold leading-8 tracking-tight sm:text-7xl px-8"> What are microagressions? </h1>
+                     <p class="font-semibold text-4xl m-4 mt-16">  Microaggressions are the everyday slights, insults, put-downs, and invalidations that
+                      queer communities experience in their day-to-day interactions. These subtle comments usually come from the societal belief that 
+                      straight or cis is a sign of being “normal”.</p>  
+                  </div>
               </div>
-            </dl>  
-         </div>
         </div>
+
+        <svg class="flash-separator m-auto mt-4 " width="70px" height="110px" viewBox="0 0 70 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="icon-flash" fill="#FFD202">
+            <polygon id="flash-path" points="36.2194255 42.3495913 58.5871111 42.3495913 4.21798766 110 22.3676855 63.0627807 0 63.0627807 21.813225 0 69.8806908 0"></polygon>
+            </g>
+          </g>
+        </svg>
+
+        <section class="bg-white py-4 mx-auto max-w-7xl px-8 sm:px-6 lg:px-8"> 
+
+          <p class="text-gray-900 text-2xl m-4 mt-8">Assuming someone's gender pronouns, not asking about their pronouns, and continuing to use the wrong pronouns after the correct
+            ones have been shared is one very common example of microaggression that deny the personal experience, emotions, or thoughts of a
+             person.  </p>
+
+        </section>
+
       </div>
+
+        <div class="grid grid-cols-1 gap-2 mx-auto py-8 max-w-7xl sm:grid-cols-2 px-8 sm:px-6 lg:px-8">
+          <% microagressionsList.forEach(details => {%> 
+          <div class="max-w-sm min-w-fit lg:max-w-full lg:flex rounded-tr-lg flip ">                   
+            <div class= "flex flex-col bg-blue-500 rounded-b lg:rounded-b-none lg:rounded-r p-14 justify-between leading-normal flip-content">
+              <div class="flip-front"> 
+                  <ul>  
+                      <li> 
+                         <div class="text-gray-900 font-bold text-5xl my-10"> <a href="/examples/:id"> <%= details.title %> </a> </div>
+                         <p class="text-gray-800 text-2xl mt-4"> <%= details.content %> </p>
+                      </li>
+                      <li> 
+                          <p class="text-lg mt-6 text-gray-900"> Want to contribute?  <a href="/edit/<%=details._id %>" class=" text-black hover:text-blue-700 md:text-lg mb-0"> Suggest revision </a>  </p> 
+                          <p class="text-lg mt-6 text-gray-900"> How to respond and how to avoid?  <a href="/edit/<%=details._id %>" class=" text-black hover:text-blue-700 md:text-lg mb-0">  </a>  </p> 
+
+                        </li>
+                   </ul> 
+              </div>
+
+                <div class="flip-back"> 
+                  <h1 class="text-gray-900 font-bold text-4xl m-auto"> What to do to avoid causing a microaggression. </h1> 
+                   <p class="text-gray-700 text-2xl mt-4"> When you meet someone new, your brain instinctively begins to categorize the person and notice differences. It’s when our brains get “stuck” in these differences that microaggressions happen. Here are some helpful tips to avoid getting stuck.</p> </strong>
+                 </div>
+            </div>
+         </div>
+         <% }) %>
+        </div>
+        
+      </div>
+         <div class="flex mt-3 sm:mt-6 sm:ml-6">
+          <a href="/add" class=" mx-auto flex w-1/3 items-center justify-center rounded-md borderborder-transparent bg-rose-500 px-8 py-3 text-base font-medium text-white hover:bg-rose-600 md:py-4 md:px-10 md:text-lg">Contribute</a>
+        </div>
+   </div>
+
+   
+   
+   <div class="flex-auto max-w-7xl justify-center mx-auto mt-20"> 
+  <%- include('footer.ejs') %>
+
+   </div>
 
 </body>
 </html>

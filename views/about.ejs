@@ -8,19 +8,59 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
   <link href="/output.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
+
 <title>About</title>
 </head>
 
 <body>
-  <%- include('header.ejs') %>
+  <div class="bg-yellow-400"> 
+    <%- include('header.ejs') %>
+  </div>
+  
 
-  <div class="bg-white py-12">
+  <div class="bg-yellow-400 py-12">
     <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
       <div class="lg:text-center px-12">
-        <p class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl px-8"> About this page </p>
-        <h2 class="text-lg font-semibold text-indigo-600 m-8">  The act of constantly and openly perpetuating stereotypes and putting someone down can reinforce barriers in one's life (including in the workplace, when accessing leadership roles, and others). These are comments and actions directed towards people based on their gender identity and/or sexual orientation. These comments usually come from the societal belief that straight, for example, is a sign of being “normal”.</h2>   
-      </div>
+        <h1 class="mt-2 text-4xl font-bold leading-8 tracking-tight gray-900 sm:text-7xl px-8"> On a mission to empower queer communities </h1>
 
+        <h3 class="text-gray-900 font-bold text-5xl m-4 mt-16">
+          
+          "That's so gay" is a simple, easy-to-use, non-profit platform with aim to collect everyday microaggressions 
+         towards lesbian, gay, bisexual, trans, intersex and queer (LGBTIQ+) communities and highlight their harmful impact. </h3>
+          <!-- <figure class="max-w-lg">
+            <img class="max-w-full h-auto rounded-lg" src="https://images.unsplash.com/photo-1627880376090-430f22a3ff67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="image description">
+            <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">Pink Sitting On Chair by Jorge Margarido</figcaption>
+          </figure> -->
+      
+    </div>
+    </div>
+  </div>
 
+  <svg class="flash-separator m-auto mt-4 " width="70px" height="110px" viewBox="0 0 70 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="icon-flash" fill="#FFD202">
+      <polygon id="flash-path" points="36.2194255 42.3495913 58.5871111 42.3495913 4.21798766 110 22.3676855 63.0627807 0 63.0627807 21.813225 0 69.8806908 0"></polygon>
+      </g>
+    </g>
+  </svg>
+   
+ 
+  <section class="bg-white py-4 mx-auto max-w-7xl px-8 sm:px-6 lg:px-8"> 
+
+    <p class="text-gray-900 text-2xl m-4 mt-8">As a software developer with intrinsic passion and interest in women's and LGBTIQ+ human rights, I believe in technology as
+      a tool for self-expression, deconstructing partiarchy and social change in general. As a queer person, I have the knowledge of or have experienced most of the listed 
+      microagressions and therefore decided to build a dedicated platform with that purpose. </p>
+      <p class="text-gray-900 text-2xl m-4 mt-8 pb-8">
+      I appreciate any feedback and suggestions on experienced microagressions, 
+      especially from the perspectives of the queer and other marginalized communities. "That's so gay!" is heavily inspired by the  <a href="https://www.themicropedia.org"> Micropedia, </a>
+       the first encyclopedia of microagressions. Please contact me at with us with any questions, feedback or suggestions. </p>
+  </section>
+
+  <div class="flex-auto max-w-7xl justify-center mx-auto mt-20"> 
+  <%- include('footer.ejs') %>
+</div>
+
+  
  </body>
 </html>  
