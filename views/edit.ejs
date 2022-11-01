@@ -11,46 +11,48 @@
 
   </head>
   <body>
-    <%- include('header.ejs') %>
-
-    <div class="bg-gray-100 h-1000 ">   
-      <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">     
-        <div class="md:flex md:flex-wrap md:gap-6">
-          <div class="md:col-span-3">
-            <div class="px-4 sm:px-0">
-              <p class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl px-8" >Microaggressions take many forms. We want to make sure every experience is heard. If you have one to share, feel free to add a new microaggression entry.
-            </p>
-            </div>
+    <div class=" bg-orange-400"> 
+      <%- include('header.ejs') %>
+      </div>
+  
+      <div class="relative overflow-hidden bg-white"> 
+          <div class="bg-orange-400 py-12">
+              <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
+                   <div class="lg:text-center px-12  text-gray-900">
+                       <h1 class="mt-2 text-5xl font-bold leading-8 tracking-tight sm:text-7xl px-8"> Edit your own microagression </h1>
+                       <p class="font-semibold text-4xl m-4 mt-16">  Microaggressions take many forms. 
+                        We want to make sure every experience is heard. If you have one to share,
+                         feel free to add a new microaggression entry.</p>  
+                    </div>
           </div>
-
-          <div class="mt-10 sm:mt-0">
-                    <div class="md:flex md:flex-row md:gap-6">
-                      <div class="md:col-span-1">
-                        <div class="px-4 sm:px-0">
-
+        </div>
+      </div>    
+  
+      <div class="w-full overflow-scroll  h-auto bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center" >
+        <div class="bg-white rounded-md border-r-2 py-6 md_px-10 md:my-10 md:px-20 sm:max-w-4xl w-full ">
+                  
 	                <ul class="microagressions--list">
 		                <%  microagressionsList.forEach(details => {%>
                             <% if (details._id == idMicroagression) { %>
-
-                              <section class="form--wrapper"> 
-                                  <h3 class="text-lg font-bold leading-6 text-gray-900">Edit List Item</h3>
-
-                                  <div class="mt-5 md:col-span-2 md:mt-0">
-                                    <div class="overflow-hidden shadow sm:rounded-md">
-                                      <div class="bg-white px-4 py-5 sm:p-6">
-                                        <div class="grid grid-cols-6 gap-6">
-                                          <div class="col-span-6 sm:col-span-3"> 
-
+                              
                                 <li class='microagression--item'>
                                 <form action="/edit/<%= details._id%>" method="POST">
-                                    <input type="text" name="title" value="<%=details.title %>">
-                                    <textarea rows="6" cols="45" name="content"><%=details.content%></textarea>
-                                    <button type="submit" class="buton rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-sm m-2 mt-0 mb-0">Confirm</button>
-                                    <a href="/" class="cancel">Cancel</a>
+                                  <label for="title">
+                                    <div class="validation-error hide" id="title-invalid"> <p class="md:font-bold md:text-3xl text-xl md:m-0 m-4"> Suggest the title change </p> </div>
+                                    <input class="m-6 focus:outline-none border-b block md:mb-8  my-4 w-5/6 text-m text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Give your entry a title." type="text" name="title" value="<%=details.title %>">
+
+                                    <div class="validation-error hide" id="title-invalid"> <p class="md:font-bold md:text-3xl text-xl md:m-0 m-4"> Suggest the update for the microagression.</p> </div>
+                                    <textarea class=" m-6 focus:outline-none border-b block md:mb-8  my-4 w-5/6 text-m text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Why is this microagression harmful?" rows="6" cols="45" name="content"><%=details.content%></textarea>
+
+                                    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                                      <div class="rounded-md shadow">
+                                    <button type="submit" class=" flex w-full items-center justify-center rounded-md borderpx-8 py-3  font-bold  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 md:py-4 md:px-10 md:text-lg ">Confirm</button>
+                                    <a href="/" class="flex w-full items-center justify-center rounded-md borderpx-8 py-3  font-bold  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 md:py-4 md:px-10 md:text-lg ">Cancel</a>
+                                  </label>
+
+                                </div>
                                     </form>
                                 </li>
-                              </section>
-                              
                                 <% } else { %>
                                     <li class="microagression--item">
                                     <div class="microagression--title">
@@ -60,7 +62,7 @@
                                         <%= details.content %>
                                         </div>
                                         <div class="buttons--edit"> 
-                                    <a href="/edit/<%=details._id %>" class="edit"> EDIT</a>
+                                    <a href="/edit/<%=details._id %>" class="edit"> EDIT </a>
                                     <a href="/remove/<%=details._id %>" class="remove">REMOVE</a>
                                   </div>
                                   </li>
@@ -70,10 +72,9 @@
 						   </ul>
                         </div>
                       </div>
-                    </div>
-                  </div>
+                  
 						
-				</section>
+		
 		</section>
   </body>
 </html>

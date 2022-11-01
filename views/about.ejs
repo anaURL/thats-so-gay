@@ -14,17 +14,18 @@
 </head>
 
 <body>
+  <div class="relative"> 
   <div class="bg-yellow-400"> 
     <%- include('header.ejs') %>
   </div>
   
 
-  <div class="bg-yellow-400 py-12">
+  <div class="bg-yellow-400 py-12 overflow-hidden">
     <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
       <div class="lg:text-center px-12">
-        <h1 class="mt-2 text-4xl font-bold leading-8 tracking-tight gray-900 sm:text-7xl px-8"> On a mission to empower queer communities </h1>
+        <h1 class="mt-2 text-4xl font-black leading-8 tracking-tight gray-900 sm:text-7xl px-8"> On a mission to empower queer communities </h1>
 
-        <h3 class="text-gray-900 font-bold text-5xl m-4 mt-16">
+        <h3 class="text-gray-900 text-4xl m-4 mt-16">
           
           "That's so gay" is a simple, easy-to-use, non-profit platform with aim to collect everyday microaggressions 
          towards lesbian, gay, bisexual, trans, intersex and queer (LGBTIQ+) communities and highlight their harmful impact. </h3>
@@ -47,7 +48,6 @@
    
  
   <section class="bg-white py-4 mx-auto max-w-7xl px-8 sm:px-6 lg:px-8"> 
-
     <p class="text-gray-900 text-2xl m-4 mt-8">As a software developer with intrinsic passion and interest in women's and LGBTIQ+ human rights, I believe in technology as
       a tool for self-expression, deconstructing partiarchy and social change in general. As a queer person, I have the knowledge of or have experienced most of the listed 
       microagressions and therefore decided to build a dedicated platform with that purpose. </p>
@@ -57,10 +57,10 @@
        the first encyclopedia of microagressions. Please contact me at with us with any questions, feedback or suggestions. </p>
   </section>
 
-  <div class="flex-auto max-w-7xl justify-center mx-auto mt-20"> 
-  <%- include('footer.ejs') %>
 </div>
 
-  
+<div class="flex-auto md:w-full justify-center mx-auto mt-20 bg-yellow-400"> 
+  <%- include('footer.ejs') %>
+</div>
  </body>
 </html>  

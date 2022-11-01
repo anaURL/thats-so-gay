@@ -2,7 +2,6 @@
 module.exports = {
     content: ["./views/*.ejs"], 
     theme: {
-    
       extend: {},
     },
 
@@ -20,10 +19,12 @@ module.exports = {
 			// => @media (max-width: 639px) { ... }
 		},
     
-    plugins: [require("daisyui"),
-    require('@tailwindcss/forms'),
+    plugins:
+    [require("daisyui"),
+    require('@tailwindcss/forms')
   ],
   }
+
 
 
 

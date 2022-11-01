@@ -3,6 +3,14 @@ const app = express()
 const PORT = 8000 
 const mongoose = require('mongoose')
 
+//import jsdom
+const jsdom = require("jsdom");
+// create a window with the document object
+const dom = new jsdom.JSDOM("")
+// import jquery and supply it with the new dom
+const jQuery = require('jquery')(dom.window)
+
+
 const Microagression = require('./models/microagressions')
 require ('dotenv').config()
 
@@ -128,4 +136,4 @@ app
 
 
 //Start server
-app.listen(PORT, () => console.log(`Yeah we're running on ${PORT}`))
+app.listen(process.env.PORT || PORT, () => console.log(`Yeah we're running on ${PORT}`))
