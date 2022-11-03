@@ -19,7 +19,7 @@ li {
     transform: translateX(-50%) translateY(67px);
 }
 
-
+/* home page hover */
 .image-item {
     position: relative;
     color: transparent;
@@ -27,7 +27,7 @@ li {
     margin: 0;
     padding: 0;
     width: 100%;
-    z-index: 1;
+ 
   }
   
   .image-item:hover {

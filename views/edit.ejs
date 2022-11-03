@@ -6,13 +6,14 @@
     <title>Edit List</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="/output.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+  <link href="/output.css" rel="stylesheet">
 
   </head>
   <body>
     <div class=" bg-orange-400"> 
-      <%- include('header.ejs') %>
+      <%- include('navbar.ejs') %>
       </div>
   
       <div class="relative overflow-hidden bg-white"> 
@@ -24,13 +25,12 @@
                         We want to make sure every experience is heard. If you have one to share,
                          feel free to add a new microaggression entry.</p>  
                     </div>
+              </div>
           </div>
-        </div>
-      </div>    
   
-      <div class="w-full overflow-scroll  h-auto bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center" >
-        <div class="bg-white rounded-md border-r-2 py-6 md_px-10 md:my-10 md:px-20 sm:max-w-4xl w-full ">
-                  
+      <div class="w-full overflow-scroll  h-auto bg-gradient-to-r from-orange-100 via-red-100 to-yellow-100 p-4 flex items-center justify-center" >
+        <div class= "rounded-md border-r-2 py-6 md_px-10 md:my-10 md:px-20 sm:max-w-4xl w-full ">
+
 	                <ul class="microagressions--list">
 		                <%  microagressionsList.forEach(details => {%>
                             <% if (details._id == idMicroagression) { %>
@@ -44,37 +44,48 @@
                                     <div class="validation-error hide" id="title-invalid"> <p class="md:font-bold md:text-3xl text-xl md:m-0 m-4"> Suggest the update for the microagression.</p> </div>
                                     <textarea class=" m-6 focus:outline-none border-b block md:mb-8  my-4 w-5/6 text-m text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Why is this microagression harmful?" rows="6" cols="45" name="content"><%=details.content%></textarea>
 
-                                    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                                      <div class="rounded-md shadow">
-                                    <button type="submit" class=" flex w-full items-center justify-center rounded-md borderpx-8 py-3  font-bold  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 md:py-4 md:px-10 md:text-lg ">Confirm</button>
-                                    <a href="/" class="flex w-full items-center justify-center rounded-md borderpx-8 py-3  font-bold  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 md:py-4 md:px-10 md:text-lg ">Cancel</a>
+                                    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center">
+                                      <div class="rounded-md  flex items-center justify-center ">
+                                    <button type="submit" class="rounded-md py-3 m-4 font-bold  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 md:py-4 md:px-10 md:text-lg ">Confirm</button>
+                                    <a href="/examples" class=" rounded-md borderpx-8 py-3 font-bold bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-green-500 hover:to-blue-500 md:py-4 md:px-10 md:text-lg ">Cancel</a>
                                   </label>
 
                                 </div>
                                     </form>
                                 </li>
+                              </div>
+                            </div>
+                          </div>
                                 <% } else { %>
-                                    <li class="microagression--item">
-                                    <div class="microagression--title">
-                                        <%= details.title %>
-                                    </div>
-                                    <div class="microagression-content">
-                                        <%= details.content %>
-                                        </div>
-                                        <div class="buttons--edit"> 
-                                    <a href="/edit/<%=details._id %>" class="edit"> EDIT </a>
-                                    <a href="/remove/<%=details._id %>" class="remove">REMOVE</a>
+                                  <div class="md:grid lg:grid grid-flow-row gap-8 my-2 mx-auto py-8 max-w-7xl sm:grid-cols-2 px-8 sm:px-6 lg:px-8"> 
+                                    <div class="max-w-xl px-6 py-6 rounded overflow-hidden shadow-lg bg-gradient-to-r from-pink-400 to-yellow-400  hover:cyan-500 hover:to-blue-500 ">
+                                      <div class="bg-white p-8 rounded">
+                                        <ul>  
+                                          <li> 
+                                             <h2 class= "text-center text-gray-900 font-black text-5xl my-6"> <%= details.title %> </h2>
+                                             <p class="font-normal text-lg mt-4 text-justify "> <%= details.content %> </p>
+                                          </li>
+                                          <li> 
+                                            <p class="text-center font-semibold mt-6 p-4 text-gray-900">  <a href="/addressing-microagressions" class="text-black bg-gradient-to-r from-white hover:from-cyan-500 hover:to-blue-500 md:text-2xl mb-0"> How to address microagressions? </a>  </p>               
+                                            <p class="text-center font-semibold  text-gray-900"> <a href="/edit/<%=details._id %>" class=" text-black bg-gradient-to-r from-white hover:from-pink-400 hover:to-yellow-500 md:text-2xl mb-0 " > Want to contribute? Suggest revision of the microagression</a>  </p> 
+                                          </li> 
+                                      </div>
+                                   
+                                    </ul> 
                                   </div>
-                                  </li>
+                                </div>
                                 <% } %>
                             <% }) %>
 
-						   </ul>
-                        </div>
-                      </div>
-                  
-						
-		
-		</section>
+
+        
+ <div class="flex-auto md:w-full justify-center mx-auto  bg-orange-400 "> 
+ <%- include('footer.ejs') %>
+  </div>         
+				
+  <script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
+
   </body>
 </html>

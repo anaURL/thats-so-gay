@@ -1,10 +1,10 @@
 /* @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./views/*.ejs"], 
+    content: ["./views/*.ejs"],
     theme: {
-      extend: {},
+      extend: { 
+      }
     },
-
     screens: {
 			xl: { max: '1279px' },
 			// => @media (max-width: 1279px) { ... }
@@ -20,9 +20,9 @@ module.exports = {
 		},
     
     plugins:
-    [require("daisyui"),
+    [
     require('@tailwindcss/forms')
-  ],
+  ]
   }
 
 

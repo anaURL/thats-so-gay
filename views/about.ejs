@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
-  <link href="/output.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+
+<link href="/output.css" rel="stylesheet">
 
 <title>About</title>
 </head>
 
 <body>
-  <div class="relative"> 
-  <div class="bg-yellow-400"> 
-    <%- include('header.ejs') %>
-  </div>
   
+  <div class="bg-yellow-400"> 
+    <%- include('navbar.ejs') %>
+  </div>
+
+  <div class="relative"> 
 
   <div class="bg-yellow-400 py-12 overflow-hidden">
     <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
@@ -29,10 +32,6 @@
           
           "That's so gay" is a simple, easy-to-use, non-profit platform with aim to collect everyday microaggressions 
          towards lesbian, gay, bisexual, trans, intersex and queer (LGBTIQ+) communities and highlight their harmful impact. </h3>
-          <!-- <figure class="max-w-lg">
-            <img class="max-w-full h-auto rounded-lg" src="https://images.unsplash.com/photo-1627880376090-430f22a3ff67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="image description">
-            <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">Pink Sitting On Chair by Jorge Margarido</figcaption>
-          </figure> -->
       
     </div>
     </div>
@@ -45,9 +44,16 @@
       </g>
     </g>
   </svg>
+
+  <div class ="mx-auto justify-items-center mb:m max-w-7xl px-4 pt-20 md:px-8 sm:px-6 lg:px-8 ">
+    <img width="1500" height="1062" alt="Banner with a Queer liberation not rainbow capitalism, from the Pride parade in Geneva (Switzerland), July 2019." src="https://images.unsplash.com/photo-1573225041761-c902e0f8ab27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1165&q=80">   
+    <div class="text-base text-gray-800"> Photo by <a href="https://unsplash.com/@dels?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Delia Giandeini</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    </div>
+
+</div>
    
- 
-  <section class="bg-white py-4 mx-auto max-w-7xl px-8 sm:px-6 lg:px-8"> 
+ <div class="bg-white w-auto my-4"> 
+  <section class="py-4 mx-auto max-w-7xl px-8 sm:px-6 lg:px-8"> 
     <p class="text-gray-900 text-2xl m-4 mt-8">As a software developer with intrinsic passion and interest in women's and LGBTIQ+ human rights, I believe in technology as
       a tool for self-expression, deconstructing partiarchy and social change in general. As a queer person, I have the knowledge of or have experienced most of the listed 
       microagressions and therefore decided to build a dedicated platform with that purpose. </p>
@@ -56,11 +62,14 @@
       especially from the perspectives of the queer and other marginalized communities. "That's so gay!" is heavily inspired by the  <a href="https://www.themicropedia.org"> Micropedia, </a>
        the first encyclopedia of microagressions. Please contact me at with us with any questions, feedback or suggestions. </p>
   </section>
+</div>
 
 </div>
 
 <div class="flex-auto md:w-full justify-center mx-auto mt-20 bg-yellow-400"> 
   <%- include('footer.ejs') %>
 </div>
+<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
  </body>
 </html>  

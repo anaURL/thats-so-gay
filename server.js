@@ -3,14 +3,6 @@ const app = express()
 const PORT = 8000 
 const mongoose = require('mongoose')
 
-//import jsdom
-const jsdom = require("jsdom");
-// create a window with the document object
-const dom = new jsdom.JSDOM("")
-// import jquery and supply it with the new dom
-const jQuery = require('jquery')(dom.window)
-
-
 const Microagression = require('./models/microagressions')
 require ('dotenv').config()
 
@@ -62,6 +54,20 @@ app.get('/resources', (request, response) => {
 
 }); 
 
+app.get('/avoid', (request, response) => {
+    response.render("avoid.ejs") 
+
+}); 
+
+app.get('/respond', (request, response) => {
+    response.render("respond.ejs") 
+
+}); 
+
+app.get('/more-info', (request, response) => {
+    response.render("more-info.ejs") 
+
+}); 
 // preview of each microagression - returns 500 
 app
     .route("/examples/:id")
