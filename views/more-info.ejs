@@ -9,55 +9,43 @@
 	  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
 	  <link href="/output.css" rel="stylesheet">
-
-
   </head>
   <body>
 
-    <div class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500"> 
-      <%- include('navbar.ejs') %>
+     <!-- NAVBAR -->
+    <div class="bg-gradient-to-r from-green-400 to-blue-500"> 
+      <%- include(partials/navbar.ejs') %>
     </div>  
 
-    <div class="relative overflow-hidden bg-white"> 
-      <div class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 py-12 ">
-        <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
-          <div class="lg:text-center md:px-12">
-            <h1 class="mt-2 text-5xl font-black md:leading-8 tracking-tight gray-900 sm:text-7xl mb:px-8">Thanks for being here. 
-            </h1> 
-              <h3 class="text-gray-900 text-2xl md:text-4xl m-4 mt-16">
-              It's time to share what we know about microagressions so more people can be mindful about their everyday comments and actions. 
-              Here are useful links and guidelines you can use to share with your friends.
-               
-              </h3>  
-                </div>
-                </div>
-              </div>  
-              
-              
-  <svg class="flash-separator m-auto mt-4 " width="70px" height="110px" viewBox="0 0 70 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-      <g id="icon-flash" fill="#FFD202">
-      <polygon id="flash-path" points="36.2194255 42.3495913 58.5871111 42.3495913 4.21798766 110 22.3676855 63.0627807 0 63.0627807 21.813225 0 69.8806908 0"></polygon>
-      </g>
-    </g>
-  </svg>
+     <!-- PAGE HEADER -->
+     <div class="relative  bg-white"> 
+    <%- include('partials/page-header.ejs', {title: "Thanks for being here. ", 
+  description: "  It's time to share what we know about microagressions so more people can be mindful about their everyday comments and actions. Here are useful links and guidelines you can use to share with your friends.",
+  color: "bg-gradient-to-r from-green-400 to-blue-500"}) %>
 
+   <!-- MAIN-->
   <div class ="mx-auto justify-items-center mb:m max-w-7xl px-4 pt-20 md:px-8 sm:px-6 lg:px-8 ">
-    <img width="1500" height="1062" alt="Whiteboard with caption 'Hello, my pronouns are' " src="https://images.unsplash.com/photo-1605818363303-7073f9171de9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">   
-    <div class="text-base text-gray-800"> Photo by <a href="https://unsplash.com/@sharonmccutcheon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexander Grey</a> on <a href="https://unsplash.com/s/photos/queer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-    </a>
+      <img width="1500" height="1062" alt="Whiteboard with caption 'Hello, my pronouns are' " src="https://images.unsplash.com/photo-1605818363303-7073f9171de9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">   
+      <div class="text-base text-gray-800"> Photo by <a href="https://unsplash.com/@sharonmccutcheon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexander Grey</a> on <a href="https://unsplash.com/s/photos/queer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+     </a>
+     </div>
     </div>
 
-</div>
+    <div class="bg-white w-auto my-4"> 
+      <section class="py-4 mx-auto max-w-7xl px-8 sm:px-6 lg:px-8"> 
+        <p class="text-gray-900 text-2xl md:text-3xl m-4 mt-8 font-bold"> <a href="https://thesafezoneproject.com/faq/can-i-ask-someone-how-they-identify/" target="_blank" class="bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500"> Can I ask someone how they identify? (Like, about their sexual orientation or gender?)</p>
+          <p class="text-gray-900 text-2xl m-4 mt-8 pb-8">
+            If you’re asking someone “do you identify as a man or a woman” so that you can know how to refer to them (i.e. their pronouns) is better to ask, “what are your pronouns?” That’s the information you actually want to know (and often need to know) — so ask that instead. </a> </p>
+      </section>
+    </div>
+  </div>
 
-</div>
+ <!-- FOOTER -->
       <div class="flex-auto md:w-full justify-center mx-auto  bg-green-500"> 
-        <%- include('footer.ejs') %>
+        <%- include('partials/footer.ejs') %>
       </div>
 
       <script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
       <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-
-		
   </body>
 </html>

@@ -15,42 +15,18 @@
 </head>
 
 <body>
+      <!-- NAVBAR -->
   <div class="bg-blue-500"> 
-    <%- include('navbar.ejs') %>
+    <%- include('partials/navbar.ejs') %>
   </div>
 
-  <div class="relative overflow-hidden bg-white"> 
-        <div class="bg-blue-500 py-12 ">
-            <div class="mx-auto max-w-7xl px-4 md:px-8 sm:px-6 lg:px-8">
-                 <div class="text-center lg:text-center px-8 md:px-12 text-gray-900">
-                     <h1 class="mt-2 text-5xl font-black leading-8 tracking-tight sm:text-7xl px-8"> What are microagressions? </h1>
-                     <p class="text-4xl m-4 mt-16">   Assuming someone's gender pronouns, not asking about their pronouns, and continuing to use the wrong pronouns after the correct
-                      ones have been shared is one very common example of microaggression that deny the personal experience, emotions, or thoughts of a
-                       person.  
-                     </p>  
-                  </div>
-              </div>
-        </div>
+    <!-- HEADER -->
+  <div class="relative overflow-scroll"> 
+    <%- include('partials/page-header.ejs', {title: "What are microagressions?", 
+    description: "Assuming someone's gender pronouns, not asking about their pronouns, and continuing to use the wrong pronouns after the correct ones have been shared is one very common example of microaggression that deny the personal experience, emotions, or thoughts of a person.",
+    color: "bg-blue-500"}) %>
 
-        <!-- <svg class="flash-separator m-auto mt-4 " width="70px" height="110px" viewBox="0 0 70 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="icon-flash" fill="#FFD202">
-            <polygon id="flash-path" points="36.2194255 42.3495913 58.5871111 42.3495913 4.21798766 110 22.3676855 63.0627807 0 63.0627807 21.813225 0 69.8806908 0"></polygon>
-            </g>
-          </g>
-        </svg> -->
-
-    
-
-        <section class="bg-white00 py-4 mx-auto max-w-7xl px-8 sm:px-6 lg:px-8"> 
-
-          <p class="text-gray-900 text-2xl m-4 mt-8">  Microaggressions are the everyday slights, insults, put-downs, and invalidations that
-            queer communities experience in their day-to-day interactions. These subtle comments usually come from the societal belief that 
-            straight or cis is a sign of being “normal”. Start browsing this resource to learn more about microaggressions and their impact..</p>
-        </section>
-      </div>
-
-
+      <!-- GRID -->
       <div class="md:grid lg:grid grid-flow-row gap-8 my-2 mx-auto py-8 max-w-7xl sm:grid-cols-2 px-8 sm:px-6 lg:px-8">
         <% microagressionsList.forEach(details => {%> 
       <div class="max-w-xl px-6 py-6 rounded overflow-hidden shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500  hover:from-pink-400 hover:to-yellow-500 ">
@@ -61,13 +37,13 @@
                <p class="font-normal text-lg mt-4 text-justify "> <%= details.content %> </p>
             </li>
             <li> 
-              <p class="text-center font-semibold mt-6 p-4 text-gray-900">  <a href="/resources" class="text-black bg-gradient-to-r from-white hover:from-cyan-500 hover:to-blue-500 md:text-2xl mb-0"> How to address microagressions? </a>  </p>               
-              <p class="text-center font-semibold  text-gray-900"> <a href="/edit/<%=details._id %>" class=" text-black bg-gradient-to-r from-white hover:from-pink-400 hover:to-yellow-500 md:text-2xl mb-0 " > Want to contribute? Suggest revision of the microagression</a>  </p> 
+              <p class="text-center font-semibold mt-6 p-4 text-gray-900">  <a href="/resources" class="text-black bg-gradient-to-r from-white hover:from-cyan-500 hover:to-blue-500 text-xl md:text-2xl mb-0"> How to address microagressions? </a>  </p>               
+              <p class="text-center font-semibold  text-gray-900"> <a href="/edit/<%=details._id %>" class=" text-black bg-gradient-to-r from-white hover:from-pink-400 hover:to-yellow-500 text-xl md:text-2xl mb-0 " > Want to contribute? Suggest revision of the microagression</a>  </p> 
             </li> 
         </div>
-     
       </ul> 
 
+          <!-- SOCIAL SHARING BUTTONS -->
         <div class="sharing-buttons flex flex-wrap  m-4 p-4 justify-center ">
           <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-3 rounded-lg text-white border-blue-600 bg-blue-600 hover:bg-blue-700 hover:border-blue-700" target="_blank" rel="noopener" href="https://facebook.com/sharer/sharer.php?u=" aria-label="Share on Facebook">
             <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6">
@@ -91,27 +67,22 @@
             </svg>
           </a>
         </div>
-
       </div>
       <% }) %>
     </div>
-
       </div>
-         <div class="flex mt-3 sm:mt-6 sm:ml-6">
+         <div class="flex m-3 sm:mt-6 sm:ml-6">
           <a href="/add" class=" mx-auto flex w-1/3 items-center justify-center rounded-md borderborder-transparent bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-green-400 hover:to-blue-500 px-8 py-3 text-base font-semibold text-whitemd:py-4 md:px-10 md:text-lg">Contribute</a>
         </div>
-   
 
-   <div class="flex-auto  justify-center mx-auto mt-20 bg-blue-500"> 
-  <%- include('footer.ejs') %>
-   </div>
+    <!-- FOOTER -->
+    <div class="flex-auto justify-center mx-auto mt-20 bg-blue-500"> 
+      <%- include('partials/footer.ejs') %>
+     </div>
 
-</div>
 
 <script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 
-
 </body>
-
 </html>

@@ -16,40 +16,22 @@
 </head>
 
 <body>
-  
+      <!-- NAVBAR -->
   <div class="bg-yellow-400"> 
-    <%- include('navbar.ejs') %>
+    <%- include('partials/navbar.ejs') %>
   </div>
 
+      <!-- HEADER -->
   <div class="relative"> 
+    <%- include('partials/page-header.ejs', {title: "On a mission to empower queer communities", 
+    description: "'That's so gay' is a simple, easy-to-use, non-profit platform with aim to collect everyday microaggressions towards lesbian, gay, bisexual, trans, intersex and queer (LGBTIQ+) communities and highlight their harmful impact.",
+    color: "bg-yellow-400"}) %>
 
-  <div class="bg-yellow-400 py-12 overflow-hidden">
-    <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
-      <div class="lg:text-center px-12">
-        <h1 class="mt-2 text-4xl font-black leading-8 tracking-tight gray-900 sm:text-7xl px-8"> On a mission to empower queer communities </h1>
-
-        <h3 class="text-gray-900 text-4xl m-4 mt-16">
-          
-          "That's so gay" is a simple, easy-to-use, non-profit platform with aim to collect everyday microaggressions 
-         towards lesbian, gay, bisexual, trans, intersex and queer (LGBTIQ+) communities and highlight their harmful impact. </h3>
-      
-    </div>
-    </div>
-  </div>
-
-  <svg class="flash-separator m-auto mt-4 " width="70px" height="110px" viewBox="0 0 70 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-      <g id="icon-flash" fill="#FFD202">
-      <polygon id="flash-path" points="36.2194255 42.3495913 58.5871111 42.3495913 4.21798766 110 22.3676855 63.0627807 0 63.0627807 21.813225 0 69.8806908 0"></polygon>
-      </g>
-    </g>
-  </svg>
-
+      <!-- MAIN -->
   <div class ="mx-auto justify-items-center mb:m max-w-7xl px-4 pt-20 md:px-8 sm:px-6 lg:px-8 ">
     <img width="1500" height="1062" alt="Banner with a Queer liberation not rainbow capitalism, from the Pride parade in Geneva (Switzerland), July 2019." src="https://images.unsplash.com/photo-1573225041761-c902e0f8ab27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1165&q=80">   
     <div class="text-base text-gray-800"> Photo by <a href="https://unsplash.com/@dels?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Delia Giandeini</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
     </div>
-
 </div>
    
  <div class="bg-white w-auto my-4"> 
@@ -66,10 +48,11 @@
 
 </div>
 
+    <!-- FOOTER-->
 <div class="flex-auto md:w-full justify-center mx-auto mt-20 bg-yellow-400"> 
-  <%- include('footer.ejs') %>
+  <%- include('partials/footer.ejs') %>
 </div>
-<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 
+<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
  </body>
 </html>  

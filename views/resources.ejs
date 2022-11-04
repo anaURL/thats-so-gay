@@ -14,23 +14,19 @@
 </head>
 
 <body>
-  <div class="wrapper relative"> 
+
+    <!-- NAVBAE -->
   <div class="bg-green-500"> 
-    <%- include('navbar.ejs') %>
+    <%- include('partials/navbar.ejs') %>
   </div>
 
-  <div class="bg-green-500 py-12">
-    <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
-      <div class="lg:text-center md:px-12">
-        <h1 class="mt-2 text-5xl font-black md:leading-8 tracking-tight gray-900 sm:text-7xl mb:px-8">Change starts with you.
-        </h1> 
-          <h3 class="text-gray-900 text-2xl md:text-4xl m-4 mt-16">
-          It's time to share what we know about microagressions so more people can be mindful about their everyday comments and actions. 
-          Change starts here. It starts with you.
-          </h3>  
-            </div>
-            </div>
-          </div>
+
+  <!-- PAGE HEADER -->
+  <div class="relative"> 
+  <%- include('partials/page-header.ejs', {title: "Change starts with you.", 
+  description: " It's time to share what we know about microagressions so more people can be mindful about their everyday comments and actions. Change starts here. It starts with you.",
+  color: "bg-green-500"}) %>
+
 
   <!-- GRID -->
   <section class="bg-white m-8 mx-auto max-w-7xl"> 
@@ -66,12 +62,11 @@
   <p class="text-xl text-gray-900 mx-2"> Check out resources to become a better ally  omnis laudantium voluptate sunt vel saepe. </p> </div>
 </div>
 </section>  
-
-
     </div>
 
+    <!-- FOOTER-->
   <div class="flex-auto md:w-full justify-center mx-auto  bg-green-500"> 
-    <%- include('footer.ejs') %>
+    <%- include('partials/footer.ejs') %>
   </div>
   
   <script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
