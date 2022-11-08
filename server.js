@@ -18,38 +18,91 @@ mongoose.connect(process.env.DB_CONNECTION,
   )
        
 //GET
-app.get('/', async(request, response) => {
+app.get('/', (request, response) => {
+			response.render("index.ejs")
+})
+
+app.get('/examples', async(request, response) => {
     try {
         Microagression.find({}, (err, microagressions) => {
-			response.render("index.ejs", {
+			response.render("examples.ejs", {
 				microagressionsList: microagressions});
     }); 
 }   catch (err) {
         if (err) return response.status(500).send(err)
 }
-});   
+});  
 
-//POST 
 
-app.post('/', async(request,response) => {
-    const newMicroagression = new Microagression ( 
-        { 
-            title: request.body.title, 
-            content: request.body.content
-        }
-    )
-    console.log(newMicroagression)
+app.get('/add', async(request, response) => {
     try {
-        await newMicroagression.save() 
-        console.log(newMicroagression)
-        response.redirect("/")
-    } catch(err) {
+        Microagression.find({}, (err, microagressions) => {
+			response.render("add.ejs", {
+				microagressionsList: microagressions});
+    }); 
+}   catch (err) {
         if (err) return response.status(500).send(err)
-        response.redirect('/')
-    }
-})
+}
+}); 
+
+app.get('/about', (request, response) => {
+			response.render("about.ejs") 
+
+}); 
+app.get('/resources', (request, response) => {
+    response.render("resources.ejs") 
+
+}); 
+
+app.get('/avoid', (request, response) => {
+    response.render("avoid.ejs") 
+
+}); 
+
+app.get('/respond', (request, response) => {
+    response.render("respond.ejs") 
+
+}); 
+
+app.get('/more-info', (request, response) => {
+    response.render("more-info.ejs") 
+
+}); 
+// preview of each microagression - returns 500 
+app
+    .route("/examples/:id")
+    .get((request,response) => {
+        const id = request.params.id 
+        console.log(mongoose.isValidObjectId(request.params.id))
+        Microagression.findById({}, (err, microagressions) => {
+            if (err) return response.status(500).send(err)
+            response.render('examples.ejs', { 
+                microagressionsList:microagressions, 
+                idMicroagression:id })
+        })
+        });
 
 
+//POST - ADD
+    app.post('/add', async(request,response) => {
+        const newMicroagression = new Microagression ( 
+            { 
+                title: request.body.title, 
+                content: request.body.content
+            }
+        )
+        console.log(newMicroagression)
+        try {
+            await newMicroagression.save() 
+            console.log(newMicroagression)
+            response.redirect("/examples")
+        } catch(err) {
+            if (err) return response.status(500).send(err)
+            response.redirect('/')
+        }
+    })
+
+//UPDATE
 app
     .route("/edit/:id")
     .get((request,response) => {
@@ -89,4 +142,4 @@ app
 
 
 //Start server
-app.listen(PORT, () => console.log(`Yeah we're running on ${PORT}`))
+app.listen(process.env.PORT || PORT, () => console.log(`Yeah we're running on ${PORT}`))
