@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    /* font-family: 'Nunito', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+
+}
+
+li {
+    list-style: none;
+}
+
+.flash-separator {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(67px);
+}
+
+/* home page hover */
+.image-item {
+    position: relative;
+    color: transparent;
+    transition: all .5s;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .image-item:hover {
+    color: #fff;
+    filter: brightness(50%);
+    cursor: pointer;
+  }
+  
+  .hover-text {
+    position:absolute;
+    top: 80%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+  }

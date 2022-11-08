@@ -2,56 +2,88 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>That's so gay </title>
-    <link rel="stylesheet" href="/style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Edit List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+  <link href="/output.css" rel="stylesheet">
 
     
   </head>
-  <body>
-	<section class="main">
 
-		<section class="header">
-			<h1> That's so gay!</h1>
-			<h3> Why you shouldn't be using this and other microagressions toward the queer community</h3>
-		</section>
-    
+      <!-- NAVBAR -->
+    <div class=" bg-orange-400"> 
+      <%- include('partials/navbar.ejs') %>
+      </div>
 
-    <section class="latest--entries">
-      <ul class="microagressions--list">  <!-- create unordered list and assign a class to the list -->
-                  <%  microagressionsList.forEach(details => {%>  <!-- Use ejs to start a forEach loop -->
-                          <% if (details._id == idMicroagression) { %> <!-- use EJS, starting if statement, checking if id equals to the item we clicked on -->
-                            <section class="form--wrapper">   <!-- creating a section -->
-                                <h2>Edit List Item</h2>  <!-- add a h2 heading to the page -->
-                              <li class='microagression--item'>  <!-- create a list item with a class of item -->
-                              <form action="/edit/<%= details._id%>" method="POST">  <!-- creating a form and adding EJS to pull the specific element with that id. Adding a POST method -->
-                                  <input type="text" name="title" value="<%=details.title %>">  <!-- using EJS to pull the input with a value of our elem -->
-                                  <textarea rows="6" cols="45" name="content"><%=details.content%></textarea>
-                                  <button type="submit" class="confirm">Confirm</button>
-                                  <a href="/" class="cancel">Cancel</a>
-                                  </form>
-                              </li>
-                            </section> <!-- either way, ALL of the items will get displayed, but if the id of the item matches the one that we selected, we will be able to edit it  -->
-                              <% } else { %>  <!-- EJS for the else clause of our if statement. So, IF an selected item didn't have that id, then do this -->
-                                  <li class="microagression--item"> <!-- inside of the else statement we again create li item  -->
-                                  <div class="microagression--title">
-                                      <%= details.title %>    <!-- to display the title of items that didn't match that id...  -->
-                                  </div>
-                                  <div class="microagression-content"> 
-                                      <%= details.content %> <!-- and to display the title of our items  -->
-                                      </div>
-                                      <div class="buttons--edit"> 
-                                  <a href="/edit/<%=details._id %>" class="edit"> EDIT</a> <!-- adding an EDIT button to display the button  -->
-                                  <a href="/remove/<%=details._id %>" class="remove">REMOVE</a> <!-- adding an REMOVE button to display the button  -->
+        <!-- PAGE HEADER -->
+      <div class="relative"> 
+        <%- include('partials/page-header.ejs', {title: "Edit microagression", 
+        description: "Microaggressions take many forms. We want to make sure every experience is heard. If you have one to share, feel free to add a new microaggression entry.",
+        color: "bg-orange-400"}) %>
+
+          <!-- EDIT FORM -->
+      <div class="w-full h-auto bg-gradient-to-r from-orange-100 via-red-100 to-yellow-100 p-4 flex items-center justify-center" >
+        <div class= "rounded-md border-r-2 py-6 md_px-10 md:my-10 md:px-20 sm:max-w-4xl w-full ">
+
+	                <ul class="microagressions--list">
+		                <%  microagressionsList.forEach(details => {%>
+                            <% if (details._id == idMicroagression) { %>
+                              
+                                <li class='microagression--item'>
+                                <form action="/edit/<%= details._id%>" method="POST">
+                                  <label for="title">
+                                    <div class="validation-error hide" id="title-invalid"> <p class="md:font-bold md:text-3xl text-xl md:m-0 m-4"> Suggest the title change </p> </div>
+                                    <input class="m-6 focus:outline-none border-b block md:mb-8  my-4 w-5/6 text-m text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Give your entry a title." type="text" name="title" value="<%=details.title %>">
+
+                                    <div class="validation-error hide" id="title-invalid"> <p class="md:font-bold md:text-3xl text-xl md:m-0 m-4"> Suggest the update for the microagression.</p> </div>
+                                    <textarea class=" m-6 focus:outline-none border-b block md:mb-8  my-4 w-5/6 text-m text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Why is this microagression harmful?" rows="6" cols="45" name="content"><%=details.content%></textarea>
+
+                                    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center">
+                                      <div class="rounded-md  flex items-center justify-center ">
+                                    <button type="submit" class="rounded-md py-3 m-4 font-bold  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 md:py-4 md:px-10 md:text-lg ">Confirm</button>
+                                    <a href="/examples" class=" rounded-md borderpx-8 py-3 font-bold bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-green-500 hover:to-blue-500 md:py-4 md:px-10 md:text-lg ">Cancel</a>
+                                  </label>
+
                                 </div>
+                                    </form>
                                 </li>
-                              <% } %> <!-- EJS to close the else statement  -->
-                          <% }) %> <!-- EJS to close forEach  -->
+                              </div>
+                            </div>
+                          </div>
 
-             </ul>
-      </section>
-  </section>
-</body>
+                              <!-- GRID -->
+                                <% } else { %>
+                                  <div class="md:grid lg:grid grid-flow-row gap-8 my-2 mx-auto py-8 max-w-7xl sm:grid-cols-2 px-8 sm:px-6 lg:px-8"> 
+                                    <div class="max-w-xl px-6 py-6 rounded overflow-hidden shadow-lg bg-gradient-to-r from-pink-400 to-yellow-400  hover:cyan-500 hover:to-blue-500 ">
+                                      <div class="bg-white p-8 rounded">
+                                        <ul>  
+                                          <li> 
+                                             <h2 class= "text-center text-gray-900 font-black text-5xl my-6"> <%= details.title %> </h2>
+                                             <p class="font-normal text-lg mt-4 text-justify "> <%= details.content %> </p>
+                                          </li>
+                                          <li> 
+                                            <p class="text-center font-semibold mt-6 p-4 text-gray-900">  <a href="/addressing-microagressions" class="text-black bg-gradient-to-r from-white hover:from-cyan-500 hover:to-blue-500 md:text-2xl mb-0"> How to address microagressions? </a>  </p>               
+                                            <p class="text-center font-semibold  text-gray-900"> <a href="/edit/<%=details._id %>" class=" text-black bg-gradient-to-r from-white hover:from-pink-400 hover:to-yellow-500 md:text-2xl mb-0 " > Want to contribute? Suggest revision of the microagression</a>  </p> 
+                                          </li> 
+                                      </div>
+                                   
+                                    </ul> 
+                                  </div>
+                                </div>
+                                <% } %>
+                            <% }) %>
+
+ <!-- FOOTER -->
+ <div class="flex-auto md:w-full justify-center mx-auto  bg-orange-400 "> 
+ <%- include('partials/footer.ejs') %>
+  </div>         
+				
+  <script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
+
+  </body>
 </html>
+
