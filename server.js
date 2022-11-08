@@ -2,21 +2,52 @@ const express = require('express')
 const app = express()
 const PORT = 8000 
 const mongoose = require('mongoose')
+const User = require('./models/user')
+const passport = require('passport');
+const session = require('express-session');
+const Microagression = require('./models/microagressions');
+const LocalStrategy = require("passport-local");
+const passportLocalMongoose = require("passport-local-mongoose");
 
-const Microagression = require('./models/microagressions')
+
+
 require ('dotenv').config()
-
-
-//Set middleware
-app.set('view engine', 'ejs')
-app.use(express.static('public'))
-app.use(express.urlencoded({extended:true}))
+require("./config/passport")(passport);
 
 mongoose.connect(process.env.DB_CONNECTION,
     {useNewUrlParser: true},
     () => {console.log('Connected to database')}
   )
-       
+
+//Set middleware
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({extended:true}))
+
+
+//// setup Sessions - stored in MongoDB
+app.use(require("express-session")({
+    secret:"kat cat",
+    resave: false,
+    saveUninitialized: false
+}))
+ 
+  //passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+//passport middleware
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+//passport strategy
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+    
+//ROUTES
+
 //GET
 app.get('/', (request, response) => {
 			response.render("index.ejs")
@@ -68,19 +99,10 @@ app.get('/more-info', (request, response) => {
     response.render("more-info.ejs") 
 
 }); 
-// preview of each microagression - returns 500 
-app
-    .route("/examples/:id")
-    .get((request,response) => {
-        const id = request.params.id 
-        console.log(mongoose.isValidObjectId(request.params.id))
-        Microagression.findById({}, (err, microagressions) => {
-            if (err) return response.status(500).send(err)
-            response.render('examples.ejs', { 
-                microagressionsList:microagressions, 
-                idMicroagression:id })
-        })
-        });
+
+app.get("/register", (request, response) => {
+    response.render("register.ejs") 
+}); 
 
 
 //POST - ADD
@@ -130,16 +152,63 @@ app
 })
 
 //DELETE
-app
-        .route("/remove/:id")
-        . get((request, response) => {
-            const id = request.params.id
-            Microagression.findByIdAndRemove(id, err => {
-			if (err) return response.status(500).send(err)
-			response.redirect("/")
-		})
-	})
+// app
+//         .route("/remove/:id")
+//         . get((request, response) => {
+//             const id = request.params.id
+//             Microagression.findByIdAndRemove(id, err => {
+// 			if (err) return response.status(500).send(err)
+// 			response.redirect("/")
+// 		})
+// 	})
 
+
+//register 
+
+// handeling user sign up
+app.post("/register", (request, response) => {
+    // console.log(req.body.username);
+    // console.log(req.body.password);
+    User.register(new User({username: request.body.username}), request.body.password, function(err, user){
+        if(err){
+            console.log(err);
+            return response.render("/add");
+        }
+        passport.authenticate("local")(request, response, function(){
+            response.redirect("/add");
+        });
+    });
+});
+
+//login
+
+// Login Form
+app.get("/login", function(req, res){
+    res.render("login");
+});
+
+// Login Logic
+// middleware
+app.post("/login", passport.authenticate("local",{
+    successRedirect: "/add",
+    failureRedirect: "/login"
+}), function(req, res){
+    res.render("/add");
+});
+
+// Logout
+app.get("/logout", function(request, response){
+    request.logout();
+    response.redirect("/");
+});
+
+// check isLoggedIn
+function isLoggedIn(request, response, next){
+    if(request.isAuthenticated()){
+        return next();
+    }
+    response.redirect("/login");
+}
 
 //Start server
 app.listen(process.env.PORT || PORT, () => console.log(`Yeah we're running on ${PORT}`))
