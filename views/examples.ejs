@@ -21,7 +21,7 @@
   </div>
 
     <!-- HEADER -->
-  <div class="relative overflow-scroll"> 
+  <div class="relative overflow-auto"> 
     <%- include('partials/page-header.ejs', {title: "What are microagressions?", 
     description: "Assuming someone's gender pronouns, not asking about their pronouns, and continuing to use the wrong pronouns after the correct ones have been shared is one very common example of microaggression that deny the personal experience, emotions, or thoughts of a person.",
     color: "bg-blue-500"}) %>
@@ -72,10 +72,11 @@
       <% }) %>
     </div>
       </div>
-         <div class="flex m-3 sm:mt-6 sm:ml-6">
-          <a href="/add" class=" mx-auto flex w-1/3 items-center justify-center rounded-md borderborder-transparent bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-green-400 hover:to-blue-500 px-8 py-3 text-base font-semibold text-whitemd:py-4 md:px-10 md:text-lg">Contribute</a>
-        </div>
-
+       
+      <div class="flex justify-center m-3 sm:mt-6 sm:ml-6 p-6 ">
+        <a href="/add" class=" mx-auto flex w-1/3 items-center justify-center rounded-md borderborder-transparent bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-green-400 hover:to-blue-500 px-8 py-3 text-base font-semibold text-whitemd:py-4 md:px-10 md:text-lg">Contribute</a>
+      </div>
+      
     <!-- FOOTER -->
     <div class="flex-auto justify-center mx-auto mt-20 bg-blue-500"> 
       <%- include('partials/footer.ejs') %>
