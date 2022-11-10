@@ -19,27 +19,16 @@ li {
     transform: translateX(-50%) translateY(67px);
 }
 
-/* home page hover */
-.image-item {
-    position: relative;
-    color: transparent;
-    transition: all .5s;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
   
-  .image-item:hover {
-    color: #fff;
-    filter: brightness(50%);
-    cursor: pointer;
+  .img-bg {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
   }
-  
-  .hover-text {
-    position:absolute;
-    top: 80%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
 
+  .img-bg:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color:#fff;
   }
+

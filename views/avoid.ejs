@@ -1,51 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
-    <link href="/output.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+
+<link href="/output.css" rel="stylesheet">
+
     <title>How to avoid causing microagressions</title>
 </head>
 <body>
 
     <!-- NAVBAR -->
-    <div class="bg-red-500"> 
+    <div class="bg-red-500 "> 
         <%- include('partials/navbar.ejs') %>
       </div>
 
     <!-- HEADER-->
-      <div class="relative "> 
+      <div class="relative pb-8"> 
         <%- include('partials/page-header.ejs', {title: "How to avoid causing microagressions? ", 
-        description: "Whether you’ve observed, received, or delivered a microaggression, the situation is uncomfortable. But it doesn’t have to stay that way. The tips below will give you the tools to help better navigate the microaggression.",
+        description: "As suggested by the name, microaggressions seem small; but compounded over time, they can have an enormous impact on a person’s experience, health, and overall well-being. Research suggests that subtle forms of interpersonal discrimination like microaggressions are at least as harmful as more-overt expressions of discrimination. Below are some helpful tips from researchers to consider:",
         color: "bg-red-500"}) %>
 
     <!-- MAIN -->
-        <div class ="mx-auto mb:m max-w-7xl px-4 pt-20 md:px-8 sm:px-6 lg:px-8 ">
-            <img width="1500" height="1062" alt="banner with caption Silence is Violence" src="https://images.unsplash.com/photo-1591457410079-5f4ba0206fe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80">   
+        <div class ="mx-auto mb:m max-w-7xl px-4 pt-12 md:px-8 sm:px-6 lg:px-8 ">
+            <img class="object-cover" alt="banner with caption Silence is Violence" src="../img/silence-violence.jpg">   
             <div class="text-base text-gray-800"> Photo by <a href="https://unsplash.com/@dyanawingso?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dyana Wing So</a> on <a href="https://unsplash.com/s/photos/solidarity?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  </div>
         </div>
 
-        <section class="bg-white00 py-4 mx-auto max-w-7xl px-8 sm:px-6 lg:px-8"> 
-            <p class="text-gray-900 text-2xl m-4 mt-8"> 🎧 Take an interest in other people; ask open questions about their lives and interests. Genuinely care about their answers. </p>
+        <section class="bg-white00 py-4 mx-auto max-w-7xl px-8 sm:px-6 lg:px-8 text-gray-900"> 
+            <h2 class="text-3xl m-4 mt-8 font-black">  ⏯ PAUSE</h2>
+            <p class= "text-2xl m-4">  Don’t be in a rush to speak or act. Pause before asking someone a personal question. 
+                Pause before you describe a person’s personality in a certain way. Pause before you make a comparison between someone 
+                and something else you’ve seen. These simple thoughts and moments are where bias lives so taking a second to think about
+                 it make all the difference. </p>
 
-            <p class="text-gray-900 text-2xl m-4 mt-8">  ♠️ Look to understand a person at the surface level as well as their deeper world view. </p>
-                
-                <p class="text-gray-900 text-2xl m-4 mt-8">  👀 Observe and acknowledge their facial reactions and body language. Be on the lookout for mismatches between what people say and how they act.</p>
-                
-                    <p class="text-gray-900 text-2xl m-4 mt-8"> 🌽 Try to listen without prejudice. It is too easy to cancel others because their views don’t chime with your own. Instead get curious, listen intently. Learn.</p>
-                
-                        <p class="text-gray-900 text-2xl m-4 mt-8">  🥵 If people get angry, get EVEN more curious! This is usually a precursor to fascinating insight. Stay calm.</p>
-                
-                            <p class="text-gray-900 text-2xl m-4 mt-8">  🆘 Acknowledge rapport is impossible with some people. Don’t be afraid to pull the ejector handle (like Goose from Top Gun – hopefully with better results).</p>
-                
-                                <p class="text-gray-900 text-2xl m-4 mt-8">  🪂 Exit with dignity. “I know lots of other people will want to chat with you, so I must not monopolise your time”.</p>
-                
-                                    <p class="text-gray-900 text-2xl m-4 mt-8">    🥂Treat people well. Respect people’s dignity. These tips work as well for insight research as for evening drinks, networking or even at a wedding.</p>
+                 <h2 class="text-3xl m-4 mt-8 font-black">  🤨 QUESTION </h2>
+                 <p class= "text-2xl m-4"> Ask yourself these important questions. Is your brain getting stuck on differences that 
+                    you’re noticing? Are they triggering things that you subconsciously believe? Are you making assumptions because of 
+                    these beliefs? What will the person I’m interacting with feel or think when I say or do this? Awareness of our own bias
+                     comes when we answer these questions for ourselves. </p>
+
+                     <h2 class="text-3xl m-4 mt-8 font-black">  🖼 REFRAME </h2>
+                 <p class= "text-2xl m-4">See the bigger picture. Sit in the uncomfortableness of your questions. List the things you can 
+                    do to change your thoughts and behaviors. This could include researching other cultures and the history of certain phrases
+                     to acknowledging the systems that give you the privilege of removing offensive phrases from your vocabulary one by one. 
+                     Stop your defensive thoughts. Acknowledge that you can cause microaggressions, but it doesn’t make you a bad person. 
+                     Unlearning bias won’t happen overnight.</p>
+
+                     <p class="text-xl text-opacity-10 mx-4 my-8">Source: <a href="https://hbr.org/2020/07/when-and-how-to-respond-to-microaggressions" target="_blank">Harvard Business Review</a>, <a href="https://www.themicropedia.org/" target="_blank">Micropedia  </a> </p>
             </section>
+
+            <section class=" flex py-4 mx-auto my-6 max-w-7xl px-8 sm:px-6 lg:px-8 justify-center">
+                <button  type="button" onclick="location.href='/respond'" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        How to respond to microagression? 
+                    </span>
+                  </button>
+                  <button type="button" onclick="location.href='/more-info'" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        More info about microagressions
+                    </span>
+                  </button>
+                </section>
         </div>
 
  <!-- FOOTER -->

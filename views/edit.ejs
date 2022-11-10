@@ -25,7 +25,7 @@
 
           <!-- EDIT FORM -->
       <div class="w-full h-auto bg-gradient-to-r from-orange-100 via-red-100 to-yellow-100 p-4 flex items-center justify-center" >
-        <div class= "rounded-md border-r-2 py-6 md_px-10 md:my-10 md:px-20 sm:max-w-4xl w-full ">
+        <div class= "rounded-md border-r-2 py-6 max-w-7xl md:my-10 md:px-20 w-full ">
 
 	                <ul class="microagressions--list">
 		                <%  microagressionsList.forEach(details => {%>
@@ -49,34 +49,17 @@
                                 </div>
                                     </form>
                                 </li>
+                              </ul> 
                               </div>
                             </div>
-                          </div>
-
-                              <!-- GRID -->
-                                <% } else { %>
-                                  <div class="md:grid lg:grid grid-flow-row gap-8 my-2 mx-auto py-8 max-w-7xl sm:grid-cols-2 px-8 sm:px-6 lg:px-8"> 
-                                    <div class="max-w-xl px-6 py-6 rounded overflow-hidden shadow-lg bg-gradient-to-r from-pink-400 to-yellow-400  hover:cyan-500 hover:to-blue-500 ">
-                                      <div class="bg-white p-8 rounded">
-                                        <ul>  
-                                          <li> 
-                                             <h2 class= "text-center text-gray-900 font-black text-5xl my-6"> <%= details.title %> </h2>
-                                             <p class="font-normal text-lg mt-4 text-justify "> <%= details.content %> </p>
-                                          </li>
-                                          <li> 
-                                            <p class="text-center font-semibold mt-6 p-4 text-gray-900">  <a href="/addressing-microagressions" class="text-black bg-gradient-to-r from-white hover:from-cyan-500 hover:to-blue-500 md:text-2xl mb-0"> How to address microagressions? </a>  </p>               
-                                            <p class="text-center font-semibold  text-gray-900"> <a href="/edit/<%=details._id %>" class=" text-black bg-gradient-to-r from-white hover:from-pink-400 hover:to-yellow-500 md:text-2xl mb-0 " > Want to contribute? Suggest revision of the microagression</a>  </p> 
-                                          </li> 
-                                      </div>
-                                   
-                                    </ul> 
-                                  </div>
-                                </div>
+                               
                                 <% } %>
                             <% }) %>
+                          </div>
+                         
 
  <!-- FOOTER -->
- <div class="flex-auto md:w-full justify-center mx-auto  bg-orange-400 "> 
+ <div class=" bg-orange-400 "> 
  <%- include('partials/footer.ejs') %>
   </div>         
 				

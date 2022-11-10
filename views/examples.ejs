@@ -27,17 +27,17 @@
     color: "bg-blue-500"}) %>
 
       <!-- GRID -->
-      <div class="md:grid lg:grid grid-flow-row gap-8 my-2 mx-auto py-8 max-w-7xl sm:grid-cols-2 px-8 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-flow-row lg:gap-8 lg:my-2 mx-auto py-8 max-w-7xl sm:grid-cols-2 px-8 sm:px-6 lg:px-8">
         <% microagressionsList.forEach(details => {%> 
-      <div class="max-w-xl px-6 py-6 rounded overflow-hidden shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500  hover:from-pink-400 hover:to-yellow-500 ">
-        <div class="bg-white p-8 rounded">
+      <div class="max-w-xl md:p-6 p-2 m-2 rounded overflow-hidden shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500  hover:from-pink-400 hover:to-yellow-500 ">
+        <div class="bg-white md:p-8 p-4 rounded">
           <ul>  
             <li> 
-               <h2 class= "text-center text-gray-900 font-black text-5xl my-6"> <%= details.title %> </h2>
+               <h2 class= "text-center text-gray-900 font-black md:text-5xl text-4xl md:my-6"> <%= details.title %> </h2>
                <p class="font-normal text-lg mt-4 text-justify "> <%= details.content %> </p>
             </li>
             <li> 
-              <p class="text-center font-semibold mt-6 p-4 text-gray-900">  <a href="/resources" class="text-black bg-gradient-to-r from-white hover:from-cyan-500 hover:to-blue-500 text-xl md:text-2xl mb-0"> How to address microagressions? </a>  </p>               
+              <p class="text-center font-semibold lg:mt-6 p-4 text-gray-900">  <a href="/resources" class="text-black bg-gradient-to-r from-white hover:from-cyan-500 hover:to-blue-500 text-xl md:text-2xl mb-0"> How to address microagressions? </a>  </p>               
               <p class="text-center font-semibold  text-gray-900"> <a href="/edit/<%=details._id %>" class=" text-black bg-gradient-to-r from-white hover:from-pink-400 hover:to-yellow-500 text-xl md:text-2xl mb-0 " > Want to contribute? Suggest revision of the microagression</a>  </p> 
             </li> 
         </div>
