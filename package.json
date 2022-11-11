@@ -7,8 +7,7 @@
     "build-css": "tailwindcss -i src/input.css -o public/output.css",
     "dev-css": "tailwindcss -i src/input.css -o public/output.css --watch",
     "start": "node server.js",
-    "dev": "concurrently \"nodemon server.js\" \"npm run dev-css \"",
-    "production": "cross-env NODE_ENV=production tailwindcss -c ./tailwind.config.js -i css/style.css -o css/style.min.css"
+    "dev": "concurrently \"nodemon server.js\" \"npm run dev-css \""
   },
   "author": "",
   "license": "ISC",
