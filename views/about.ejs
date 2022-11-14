@@ -17,7 +17,7 @@
 
 <body>
       <!-- NAVBAR -->
-  <div class="bg-yellow-400"> 
+  <div class="bg-purple "> 
     <%- include('partials/navbar.ejs') %>
   </div>
 
@@ -25,7 +25,7 @@
   <div class="relative"> 
     <%- include('partials/page-header.ejs', {title: "On a mission to empower queer communities", 
     description: "'That's so gay' is a simple, easy-to-use, non-profit platform with aim to collect everyday microaggressions towards lesbian, gay, bisexual, trans, intersex and queer (LGBTIQ+) communities and highlight their harmful impact.",
-    color: "bg-yellow-400"}) %>
+    color: "bg-gradient-to-r from-one via-two to-three", titleColor:"text-lime", descriptionColor:"text-white"}) %>
 
       <!-- MAIN -->
   <div class ="mx-auto justify-items-center mb:m max-w-7xl px-4 pt-10 md:pt-20 md:px-8 sm:px-6 lg:px-8 ">
@@ -49,10 +49,12 @@
 </div>
 
     <!-- FOOTER-->
-<div class=" bg-yellow-400"> 
+<div class=" bg-gradient-to-r from-one via-two to-three"> 
   <%- include('partials/footer.ejs') %>
 </div>
 
 <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+<script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
+
  </body>
 </html>  

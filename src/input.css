@@ -18,7 +18,6 @@ li {
     bottom: 0;
     transform: translateX(-50%) translateY(67px);
 }
-
   
   .img-bg {
     width:100%;
@@ -32,3 +31,7 @@ li {
     color:#fff;
   }
 
+/* 
+  h1 {
+    text-shadow: 1.5px 1.5px #39A886;
+  } */

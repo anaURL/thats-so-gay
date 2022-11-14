@@ -6,7 +6,7 @@
   "scripts": {
     "build-css": "tailwindcss -i src/input.css -o public/output.css",
     "dev-css": "tailwindcss -i src/input.css -o public/output.css --watch",
-    "start": "node server.js",
+    "start": "npm run build-css && node server.js",
     "dev": "concurrently \"nodemon server.js\" \"npm run dev-css \""
   },
   "author": "",

@@ -17,7 +17,7 @@
 <body>
 
         <!-- NAVBAR -->
-    <div class="bg-pink-500"> 
+    <div class="bg-purple"> 
         <%- include('partials/navbar.ejs') %>
       </div>
 
@@ -25,7 +25,7 @@
       <div class="relative pb-8"> 
         <%- include('partials/page-header.ejs', {title: "How to respond to microagressions? ", 
         description: "There is no single correct way to respond to microaggressions, but here are some helpful tips from researchers to consider.",
-        color: "bg-pink-500"}) %>
+        color: "bg-purple", titleColor:"text-lime", descriptionColor:"text-white"}) %>
 
     <!-- MAIN -->
         <div class ="mx-auto mb:m max-w-7xl px-4 pt-20 md:px-8 sm:px-6 lg:px-8 ">
@@ -79,7 +79,7 @@
             </section>
 
         </div>
-        <div class="flex-auto md:w-full justify-center mx-auto  bg-pink-500 "> 
+        <div class="flex-auto md:w-full justify-center mx-auto bg-gradient-to-r from-one via-two to-three"> 
             <%- include('partials/footer.ejs') %>
         </div>
           

@@ -15,7 +15,7 @@
 <body>
 
      <!-- NAVBAR -->
-    <div class="bg-purple-400"> 
+    <div class="bg-gradient-to-r from-one via-two to-three "> 
         <%- include('partials/navbar.ejs') %>
       </div>
 
@@ -23,8 +23,7 @@
 	  <div class="relative  bg-white"> 
       <%- include('partials/page-header.ejs', {title: "Add your own microagression", 
       description: "Microaggressions are the everyday slights, insults, put-downs, and invalidations that queer communities experience in their day-to-day interactions. Microaggressions take many forms. We want to make sure every experience is heard. If you have one to share, feel free to add a new microaggression entry.",
-      color: "bg-purple-400"}) %>
-
+      color: "bg-gradient-to-r from-one via-two to-three", titleColor:"text-pink", descriptionColor:"text-white"}) %>
         <!-- FORM-->
 
 		<div class="w-full overflow-scroll  h-auto bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center" >
@@ -49,7 +48,7 @@
 </div>
 
  <!-- FOOTER -->
-<div class="flex-auto md:w-full justify-center mx-auto  bg-purple-400 "> 
+<div class="flex-auto md:w-full justify-center mx-auto bg-purple"> 
 	<%- include('partials/footer.ejs') %>
   </div>
 
