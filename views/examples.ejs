@@ -27,18 +27,18 @@
     color: "bg-purple", titleColor:"text-lime", descriptionColor:"text-white"}) %>
 
       <!-- GRID -->
-      <div class="lg:grid lg:grid-flow-row lg:gap-8 lg:my-2 mx-auto py-8 max-w-7xl sm:grid-cols-2 px-8 sm:px-6 lg:px-8">
+      <div class="sm:mx-auto lg:grid lg:grid-flow-row lg:gap-8 lg:my-2 py-8 max-w-7xl sm:grid-cols-2 px-8 sm:px-6 lg:px-8">
         <% microagressionsList.forEach(details => {%> 
       <div class="max-w-xl md:p-6 p-2 m-2 rounded overflow-hidden shadow-lg bg-purple ">
         <div class="bg-white p-4 rounded">
           <ul>  
             <li> 
-               <h2 class= "text-center text-black font-black md:text-5xl text-4xl md:my-6"> <%= details.title %> </h2>
-               <p class="font-normal text-lg mt-4 text-justify text-black "> <%= details.content %> </p>
+               <h2 class= "text-center text-black font-black text-4xl md:my-6 tracking-tight md:tracking-normal"> <%= details.title %> </h2>
+               <p class="font-normal text-lg mt-4 text-justify text-black tracking-tight md:tracking-normal"> <%= details.content %> </p>
             </li>
             <li> 
-              <p class="text-center font-semibold lg:mt-6 p-4 text-gray-900">  <a href="/resources" class="text-lime bg-purple  text-xl md:text-2xl mb-0"> How to address microagressions? </a>  </p>               
-              <p class="text-center font-semibold  text-gray-900"> <a href="/edit/<%=details._id %>" class=" text-white bg-purple text-xl md:text-2xl mb-0 " > Want to contribute? Suggest revision of the microagression</a>  </p> 
+              <p class="text-center font-normal lg:mt-6 p-4">  <a href="/resources" class="text-lime bg-purple  text-xl md:text-2xl mb-0"> How to address microagressions? </a>  </p>               
+              <p class="text-center font-normal "> <a href="/edit/<%=details._id %>" class=" text-white bg-purple text-xl md:text-2xl mb-0 " > Want to contribute? Suggest revision of the microagression</a>  </p> 
             </li> 
         </div>
       </ul> 

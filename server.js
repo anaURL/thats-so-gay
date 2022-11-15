@@ -45,9 +45,12 @@ app.get('/add', async(request, response) => {
 }); 
 
 app.get('/about', (request, response) => {
-			response.render("about.ejs") 
-
+    try {response.render("about.ejs") 
+ } catch (err) {
+    if (err) return response.status(500).send(err)
+}
 }); 
+			
 app.get('/resources', (request, response) => {
     response.render("resources.ejs") 
 
@@ -63,8 +66,8 @@ app.get('/respond', (request, response) => {
 
 }); 
 
-app.get('/more-info', (request, response) => {
-    response.render("more-info.ejs") 
+app.get('/info', (request, response) => {
+    response.render("info.ejs") 
 
 }); 
 
@@ -85,7 +88,7 @@ app.get('/more-info', (request, response) => {
             response.redirect("/examples")
         } catch(err) {
             if (err) return response.status(500).send(err)
-            response.redirect('/')
+            response.redirect('/examples')
         }
     })
 

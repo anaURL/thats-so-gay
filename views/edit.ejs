@@ -2,29 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Edit List</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
   <link href="/output.css" rel="stylesheet">
-
-    
   </head>
 
       <!-- NAVBAR -->
-    <div class=" bg-orange-400"> 
-      <%- include('partials/navbar.ejs') %>
+      <div class="bg-purple "> 
+        <%- include('partials/navbar.ejs') %>
       </div>
 
         <!-- PAGE HEADER -->
       <div class="relative"> 
         <%- include('partials/page-header.ejs', {title: "Edit microagression", 
         description: "Microaggressions take many forms. We want to make sure every experience is heard. If you have one to share, feel free to add a new microaggression entry.",
-        color: "bg-gradient-to-r from-one via-two to-three", titleColor:"text-pink", descriptionColor:"text-white"}) %>
+        color: "bg-purple", titleColor:"text-pink", descriptionColor:"text-white"}) %>
           <!-- EDIT FORM -->
       <div class="w-full h-auto bg-gradient-to-r from-orange-100 via-red-100 to-yellow-100 p-4 flex items-center justify-center" >
-        <div class= "rounded-md border-r-2 py-6 max-w-7xl md:my-10 md:px-20 w-full ">
+        <div class= "rounded-md border-2 border-gray-200 py-6 max-w-7xl md:my-10 md:px-20 w-full ">
 
 	                <ul class="microagressions--list">
 		                <%  microagressionsList.forEach(details => {%>
@@ -39,10 +38,13 @@
                                     <div class="validation-error hide" id="title-invalid"> <p class="md:font-bold md:text-3xl text-xl md:m-0 m-4"> Suggest the update for the microagression.</p> </div>
                                     <textarea class=" m-6 focus:outline-none border-b block md:mb-8  my-4 w-5/6 text-m text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Why is this microagression harmful?" rows="6" cols="45" name="content"><%=details.content%></textarea>
 
-                                    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center">
-                                      <div class="rounded-md  flex items-center justify-center ">
-                                    <button type="submit" class="rounded-md py-3 m-4 font-bold  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 md:py-4 md:px-10 md:text-lg ">Confirm</button>
-                                    <a href="/examples" class=" rounded-md borderpx-8 py-3 font-bold bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-green-500 hover:to-blue-500 md:py-4 md:px-10 md:text-lg ">Cancel</a>
+                                      <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                                        <div class="rounded-md">
+                                          <button type="submit" class="flex w-full items-center justify-center rounded-md border-2 px-8 py-3  text-base font-bold md:py-4 md:px-10 md:text-lg  text-black bg-gradient-to-r from-greenish to-lime">Confirm</button>
+                                        </div>
+                                        <div class="mt-3 sm:mt-0 sm:ml-3 ">
+                                          <a href="/add" class="flex w-full items-center justify-center rounded-md border-2  hover:text-lime focus:ring-4 focus:outline-none px-8 py-3 text-base font-bold  md:py-4 md:px-10 md:text-lg">Cancel</a>
+                                        </div>
                                   </label>
 
                                 </div>
@@ -58,9 +60,9 @@
                          
 
  <!-- FOOTER -->
- <div class=" bg-orange-400 "> 
- <%- include('partials/footer.ejs') %>
-  </div>         
+ <div class="flex-auto md:w-full justify-center mx-auto bg-purple"> 
+	<%- include('partials/footer.ejs') %>
+  </div>       
 				
   <script src="https://kit.fontawesome.com/c5d50179e9.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
