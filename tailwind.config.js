@@ -1,8 +1,20 @@
 /* @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./views/*.ejs"],
+    content: ["./views/**/*.ejs"],
     theme: {
-      extend: { 
+      colors: { 
+        purple: '#6340F5',
+        lime: '#4EF64E',
+        greenish:'#39A886',
+        green: '#6df900',
+        yellow: '#ffff29',
+        orange:'#ff8d00',
+        pink: '#ff00ff',
+        blue:'#00ffde',
+        one:'#00d1d4',
+        two:'#2e048e',
+        three:'#aa56d4' ,
+        white:'#FFFFFF'    
       }
     },
     screens: {
