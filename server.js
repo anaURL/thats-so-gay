@@ -2,7 +2,6 @@ const express = require('express')
 const app = express() 
 const PORT = 3000 
 const mongoose = require('mongoose') 
-
 const Microagression = require('./models/microagressions') 
 require ('dotenv').config() 
 
@@ -15,7 +14,9 @@ mongoose.connect(process.env.DB_CONNECTION,
     {useNewUrlParser: true},
     () => {console.log('Connected to database')}
   )
-       
+
+  app.use("/public", express.static('public')); 
+
 //GET
 app.get('/', (request, response) => {
 			response.render("index.ejs")
