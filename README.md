@@ -16,7 +16,7 @@ Full-stack app built with EJS and Tailwind on front-end. The main feature is tha
 # Optimizations / Future plans
 
 - Fix any responsiveness issues based on users feedback
-- Add OAuth so thay only registered users can edit content
+- Add OAuth so that only registered users can edit content
 - Re-write the whole app with React components to promote reusability and better design patterns
 
 # Lessons learned
