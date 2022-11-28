@@ -4,7 +4,7 @@
 
 This project is heavily inspired by the [Micropedia](https://www.themicropedia.org/), the first encyclopedia of microagressions.
 
-**Link to project:** https://thatssogay.up.railway.app/
+**Link to MVC:** https://thatssogay.up.railway.app/
 
 <img width="1256" alt="Screen Shot 2022-11-22 at 4 34 32 PM" src="https://user-images.githubusercontent.com/89602993/203356904-55d4c2dc-200d-4107-8db6-e5cd1a3715b1.png">
 
@@ -15,9 +15,9 @@ Full-stack app built with EJS and Tailwind on front-end. The main feature is tha
 
 # Optimizations / Future plans
 
-- Fix any responsiveness issues based on users feedback
+- Fix responsiveness issues based on users feedback
 - Add OAuth so that only registered users can edit content
 - Re-write the whole app with React components to promote reusability and better design patterns
 
 # Lessons learned
-I learned a lot about the tradeoffs of using EJS over React components. 🌚 This was also my first project styled with Tailwind, so I learned a lot about Tailwind classes too. 
+I learned a lot about the tradeoffs of using EJS over React components. 🌚 This was also my first project styled with Tailwind, so I learned a lot about Tailwind classes and routing
