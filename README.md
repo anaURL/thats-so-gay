@@ -4,7 +4,7 @@
 
 This project is heavily inspired by the [Micropedia](https://www.themicropedia.org/), the first encyclopedia of microagressions.
 
-**Link to MVC:** https://thatssogay.up.railway.app/
+**Link to MVC:** https://thats-so-gay.up.railway.app/
 
 <img width="1256" alt="Screen Shot 2022-11-22 at 4 34 32 PM" src="https://user-images.githubusercontent.com/89602993/203356904-55d4c2dc-200d-4107-8db6-e5cd1a3715b1.png">
 
