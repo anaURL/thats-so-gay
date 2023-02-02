@@ -1,6 +1,6 @@
 const express = require('express') 
 const app = express() 
-const PORT = 3000 
+const PORT = 2121
 const mongoose = require('mongoose') 
 const Microagression = require('./models/microagressions') 
 require ('dotenv').config() 
