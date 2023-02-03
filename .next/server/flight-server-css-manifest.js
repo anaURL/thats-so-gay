@@ -1,0 +1,10 @@
+self.__RSC_CSS_MANIFEST={
+  "__entry_css_mods__": {
+    "/Users/anabanana/Desktop/dev/00_TSG/thats-so-gay/app/page": [
+      "/Users/anabanana/Desktop/dev/00_TSG/thats-so-gay/styles/globals.css"
+    ]
+  },
+  "/Users/anabanana/Desktop/dev/00_TSG/thats-so-gay/app/page.js": [
+    "/Users/anabanana/Desktop/dev/00_TSG/thats-so-gay/styles/globals.css"
+  ]
+}

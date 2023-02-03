@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+    /* font-family: 'Nunito', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+
+}
+
+li {
+    list-style: none;
+}
+
+.flash-separator {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(67px);
+}
+  
+  .img-bg {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+  }
+
+  .img-bg:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color:#fff;
+  }
