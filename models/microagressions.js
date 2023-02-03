@@ -1,5 +1,4 @@
-//we are using mongoose to create our schema, as mongodb doesn't have a rigid structure,
-//we want to make sure that our data is consistent
+import { Schema, model, models } from 'mongoose';
 
 const mongoose = require('mongoose')
 
@@ -17,4 +16,5 @@ date: {
     default: Date.now
 }
 })
+
 module.exports=mongoose.model('Microagression', micropediaSchema, 'microagressions')

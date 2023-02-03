@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import NavBar from "./navbar/NavBar";
 import "../styles/globals.css";
 import Image from "next/image";
-import { Examples } from "./examples/examples";
+import Examples from "./examples/examples";
+
 
 export default function Page() {
   return (
