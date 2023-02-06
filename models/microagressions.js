@@ -1,5 +1,3 @@
-import { Schema, model, models } from 'mongoose';
-
 const mongoose = require('mongoose')
 
 const micropediaSchema = new mongoose.Schema({
@@ -16,5 +14,4 @@ date: {
     default: Date.now
 }
 })
-
 module.exports=mongoose.model('Microagression', micropediaSchema, 'microagressions')
