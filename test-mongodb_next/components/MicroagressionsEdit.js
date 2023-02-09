@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 
-const MicroagressionsEdit = ({microagression,onEdit}) => {
+const MicroagressionsEdit = ({microagression,onSubmit}) => {
     const [title,setTitle] = useState(microagression.title)
     const [content,setContent] = useState(microagression.content)
 
@@ -15,7 +15,7 @@ const MicroagressionsEdit = ({microagression,onEdit}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        onEdit(microagression.id, title, content)
+        onSubmit(microagression.id, title, content)
         
     }
 

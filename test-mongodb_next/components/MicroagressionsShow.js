@@ -13,9 +13,14 @@ const MicroagressionsShow = ({microagression,onDelete, onEdit}) => {
     setShowEdit(!showEdit)
   }
 
+  const handleSubmit = (id, newTitle, newContent) => {
+    setShowEdit(false);
+    onEdit(id,newTitle,newContent)
+  }
+
     let subject = <h3> {microagression.title} {microagression.content}</h3>
     if (showEdit) {
-      subject = <MicroagressionsEdit onEdit={onEdit} microagression={microagression} />
+      subject = <MicroagressionsEdit onSubmit={handleSubmit} microagression={microagression} />
     }
 
     return (

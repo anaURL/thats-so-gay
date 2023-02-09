@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { c } from 'tar';
-import MicroagressionsCreate from './components/MicroagressionsCreate';
-import MicroagressionsList from '../components/MicroagressionsList';
+import MicroagressionsCreate from './MicroagressionsCreate';
+import MicroagressionsList from './MicroagressionsList';
 
 
 const App = () =>  {
