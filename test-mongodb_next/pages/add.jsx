@@ -1,21 +1,24 @@
 import React from "react";
 import NavBar from "../components/NavBar";
+import MicroagressionsCreate from '../components/MicroagressionsCreate'
 
-export const add = () => {
+
+export default function Add() {
   return (
     <div>
       <NavBar/>
+      <MicroagressionsCreate/>
       <div id="textarea">
         <div className="mb-2 block">
-          <Label htmlFor="comment" value="Add new microagression" />
+          <label htmlFor="comment" value="Add new microagression" />
         </div>
-        
-        <Textarea
+{/*         
+        <textarea
           id="comment"
           placeholder="Please describe why is this harmful."
           required={true}
           rows={4}
-        />
+        /> */}
       </div>
     </div>
   );

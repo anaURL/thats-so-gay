@@ -1,36 +1,74 @@
+import { useState, useEffect } from 'react'
 import clientPromise from "../lib/mongodb";
 import NavBar from "../components/NavBar";
 import MicroagressionsCreate from "../components/MicroagressionsCreate";
 import Link from 'next/link'
 
-export default function Microagressions({ Microagressions }) {
+export default function Examples({ Microagressions }) {
+    const [microagressions, setMicroagressions] = useState(Microagressions)
+
+    useEffect(() => {
+        console.log('i am in useEffect', {microagressions})
+
+    },[microagressions])
+
+    function addMicroagression(){
+        const newMicroagression = {
+            title: "title",
+            content: "content",
+            date: "",
+            __v: 0,
+            _id: ""
+          }
+        console.log({newMicroagression})
+        setMicroagressions([...microagressions, newMicroagression])
+    }
+
     return (
         <div>
             <NavBar />
-          
             <div className="mx-auto lg:grid lg:grid-flow-row lg:gap-8 lg:my-2 py-8 max-w-7xl sm:grid-cols-2 px-8 sm:px-6 lg:px-8">
-            <ul>
-                {Microagressions.map((microagression) => (
-                    <li key={microagression.title}>
-                        <h2 className= "text-center text-black font-black text-4xl md:my-6 tracking-tight md:tracking-normal">{microagression.title}</h2>
-                        <p className="font-normal text-lg mt-4 text-justify text-black tracking-tight md:tracking-normal">{microagression.content}</p>
-                    </li>
-              
-            //   <li>
-            //   <p className="text-center font-normal lg:mt-6 p-4">
-            //   <Link href="/resources">
-            //     <a className="text-lime bg-purple text-xl md:text-2xl mb-0">How to address microagressions?</a>
-            //     </Link>
-            //   </p>
+                <ul>
+                    {/* <MicroagressionsCreate/> */}
+                    
+                    {microagressions.map((microagression) => (
+                        
+                        <li key={microagression.title}>
+                            <h2 className= "text-center text-black font-black text-4xl md:my-6 tracking-tight md:tracking-normal">
+                                {microagression.title}
+                            </h2>
+                            <p className="font-normal text-lg mt-4 text-justify text-black tracking-tight md:tracking-normal">
+                                {microagression.content}
+                            </p>
+                            {/* <Link href="/add">
+                                <button className={'border-2 p-4 my-4'}>
+                                    Add Microaggression
+                                </button>
+                            </Link> */}
+                            <button onClick={()=> addMicroagression()}>add!</button>
+                            <MicroagressionsCreate 
+                                microagressions={microagressions} 
+                                handleSetMicroagressions={setMicroagressions}
+                            />
+                        </li>
+                        
+                
+                //   <li>
+                //   <p className="text-center font-normal lg:mt-6 p-4">
+                //   <Link href="/resources">
+                //     <a className="text-lime bg-purple text-xl md:text-2xl mb-0">How to address microagressions?</a>
+                //     </Link>
+                //   </p>
 
-            //   <p>
-            //   <Link href="/edit">
-            //       <a className="text-white bg-purple text-xl md:text-2xl mb-0">Want to contribute? Suggest revision of the microagression</a>
-            //     </Link>
-            //     </p>
-            // </li>
-                    ))}
-            </ul>
+                //   <p>
+                //   <Link href="/edit">
+                //       <a className="text-white bg-purple text-xl md:text-2xl mb-0">Want to contribute? Suggest revision of the microagression</a>
+                //     </Link>
+                //     </p>
+                // </li>
+                        ))}
+                        
+                </ul>
             </div>
         </div>
     );
