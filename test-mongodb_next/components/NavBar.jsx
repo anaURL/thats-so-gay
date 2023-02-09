@@ -1,17 +1,17 @@
-"use client";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Navbar } from "flowbite-react";
 import { Button } from "flowbite-react";
 import Image from "next/image";
+import logo from '../public/img/tsg1.png'
 
 const NavBar = () => {
   return (
     <div>
       <Navbar fluid={true} rounded={true} className="bg-purple max-w-3xl items-center">
-        <Navbar.Brand href="">
+        <Navbar.Brand href="/">
           <Image
-            src="/img/logo.png"
+            src= {logo}
             alt="That's so gay logo"
             width={80}
             height={80}
