@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { clientPromise } from "../lib/mongodb";
 import NavBar from "../components/NavBar";
 import MicroagressionsCreate from '../components/MicroagressionsCreate'
 
 
 export default function Add() {
+  const [microagressions, setMicroagressions] = useState([]);
+
   return (
     <div>
       <NavBar/>
-      <MicroagressionsCreate/>
+      <MicroagressionsCreate microagressions={microagressions} handleSetMicroagressions={setMicroagressions} />
       <div id="textarea">
         <div className="mb-2 block">
           <label htmlFor="comment" value="Add new microagression" />

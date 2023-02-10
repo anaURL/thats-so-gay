@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 // import MyFooter from "../components/MyFooter"
 
 export default function Home() {
+
   return (
     <>
       <Head>

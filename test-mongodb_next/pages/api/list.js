@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb'
 
 if (!process.env.MONGODB_URI) {
-  throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
+  throw new Error('Invalid environment variable: "MONGODB_URI"')
 }
 
 const uri = process.env.MONGODB_URI
@@ -9,6 +9,10 @@ const options = {}
 
 let client
 let clientPromise: Promise<MongoClient>
+
+if (!process.env.MONGODB_URI) {
+  throw new Error('Please add your Mongo URI to .env.local')
+}
 
 if (process.env.NODE_ENV === 'development') {
   // In development mode, use a global variable so that the value
@@ -27,3 +31,25 @@ if (process.env.NODE_ENV === 'development') {
 // Export a module-scoped MongoClient promise. By doing this in a
 // separate module, the client can be shared across functions.
 export default clientPromise
+
+
+
+// import { connectToDatabase } from "../../lib/mongodb";
+
+// export default async function handler(request, response) {
+//   const { database } = await connectToDatabase();
+//   const collection = database.collection(process.env.NEXT_ATLAS_COLLECTION);
+
+
+
+
+  // if (request.method === "POST") {
+  //   const microagression = request.body;
+  //   const result = await collection.insertOne(microagression);
+  //   response.status(200).json(result.ops[0]);
+  // } else {
+  //   const results = await collection.find({}).toArray();
+  //   response.status(200).json(results);
+  // }
+  
+// }
